@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "DirtyStream"
 include(":app")
- 
+include(":attackapp")

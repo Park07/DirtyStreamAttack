@@ -29,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -39,7 +40,7 @@ import java.io.FileOutputStream
 class MainActivity : ComponentActivity() {
 
     // STEP 1: Add state variables to track what's happening
-    private var statusMessage by mutableStateOf("Ready to import backup")
+    private var statusMessage by mutableStateOf("📱 Ready to receive shared content")
 
     // STEP 2: Set up file picker (when user clicks button manually)
     private val filePickerLauncher = registerForActivityResult(
@@ -59,9 +60,9 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             DirtyStreamTheme {
-                VulnerableScreen(
+                UnsuspectingScreen(
                     statusMessage = statusMessage,
-                    onImportClick = {
+                    onBrowseClick = {
                         // When user clicks button, open file picker
                         filePickerLauncher.launch("*/*")
                     }
@@ -83,8 +84,8 @@ class MainActivity : ComponentActivity() {
         if (intent.action == Intent.ACTION_SEND) {
             val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
             uri?.let {
-                statusMessage = "⚠️ Received file from another app!"
-                Log.d("DirtyStream", "Another app sent us: $uri")
+                statusMessage = "📥 Received shared content!"
+                Log.d("DirtyStream", "Another app shared with us: $uri")
                 handleIncomingFile(it)
             }
         }
@@ -98,7 +99,7 @@ class MainActivity : ComponentActivity() {
             Log.d("DirtyStream", "Processing file: '$fileName'")
 
             // 🚨 VULNERABILITY: Using filename directly without validation!
-            val outputFile = File(filesDir, fileName ?: "backup.txt")
+            val outputFile = File(filesDir, fileName ?: "shared_content.txt")
 
             Log.d("DirtyStream", "Saving to: ${outputFile.absolutePath}")
 
@@ -107,7 +108,7 @@ class MainActivity : ComponentActivity() {
                 statusMessage = "🚨 PATH TRAVERSAL ATTACK DETECTED!\nMalicious filename: $fileName"
                 Toast.makeText(this, "⚠️ DIRTYSTREAM ATTACK!\nPath: ${outputFile.absolutePath}", Toast.LENGTH_LONG).show()
             } else {
-                statusMessage = "✅ Backup imported: ${fileName}"
+                statusMessage = "✅ Content saved successfully!"
             }
 
             // Copy the file content
@@ -117,8 +118,8 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
-            statusMessage = "✅ Backup imported: ${fileName}"
-            Toast.makeText(this, "File saved to: ${outputFile.absolutePath}", Toast.LENGTH_LONG).show()
+            statusMessage = "✅ Content saved: ${fileName ?: "shared_content.txt"}"
+            Toast.makeText(this, "Content saved to: ${outputFile.absolutePath}", Toast.LENGTH_LONG).show()
 
         } catch (e: Exception) {
             statusMessage = "❌ Error: ${e.message}"
@@ -145,9 +146,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun VulnerableScreen(
+fun UnsuspectingScreen(
     statusMessage: String,
-    onImportClick: () -> Unit
+    onBrowseClick: () -> Unit
 ) {
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -158,6 +159,23 @@ fun VulnerableScreen(
             modifier = Modifier.padding(16.dp)
         ) {
 
+            // App title - looks innocent
+            Text(
+                text = "📂 FileShare Pro",
+                style = androidx.compose.material3.MaterialTheme.typography.headlineMedium,
+                fontWeight = FontWeight.Bold,
+                color = androidx.compose.material3.MaterialTheme.colorScheme.primary,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+
+            Text(
+                text = "Easily receive and organize shared files",
+                style = androidx.compose.material3.MaterialTheme.typography.bodyMedium,
+                color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(bottom = 24.dp)
+            )
+
             // Status display
             Card(
                 modifier = Modifier.padding(bottom = 16.dp)
@@ -165,13 +183,43 @@ fun VulnerableScreen(
                 Text(
                     text = statusMessage,
                     modifier = Modifier.padding(16.dp),
-                    fontWeight = FontWeight.Medium
+                    fontWeight = FontWeight.Medium,
+                    textAlign = TextAlign.Center
                 )
             }
 
-            // Main import button
-            Button(onClick = onImportClick) {
-                Text("Import a backup")
+            // Main browse button - looks innocent
+            Button(onClick = onBrowseClick) {
+                Text("📁 Browse Files")
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Instructions that look helpful
+            Card(
+                modifier = Modifier.padding(horizontal = 8.dp),
+                colors = androidx.compose.material3.CardDefaults.cardColors(
+                    containerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+                )
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = "💡 How it works:",
+                        style = androidx.compose.material3.MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier.padding(bottom = 8.dp)
+                    )
+
+                    Text(
+                        text = "• Other apps can share files directly with FileShare Pro\n• Browse and select files manually\n• All content is safely organized in your app folder\n• Perfect for receiving photos, documents, and more!",
+                        style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
+                        textAlign = TextAlign.Start,
+                        color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
             }
         }
     }
@@ -181,9 +229,9 @@ fun VulnerableScreen(
 @Composable
 fun DefaultPreview() {
     DirtyStreamTheme {
-        VulnerableScreen(
-            statusMessage = "Ready to import backup",
-            onImportClick = {}
+        UnsuspectingScreen(
+            statusMessage = "📱 Ready to receive shared content",
+            onBrowseClick = {}
         )
     }
 }

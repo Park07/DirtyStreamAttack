@@ -101,7 +101,34 @@ fun ArtworkDetailScreen(
                 )
             }
 
-            // Artwork details in cards
+            // Artwork details in better order
+            // Add description section FIRST (most important)
+            if (artwork.description.isNotEmpty()) {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.3f)
+                    )
+                ) {
+                    Column(
+                        modifier = Modifier.padding(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text(
+                            text = "🎨 Description & Significance",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        Text(
+                            text = artwork.description,
+                            style = MaterialTheme.typography.bodyMedium,
+                            lineHeight = MaterialTheme.typography.bodyMedium.lineHeight * 1.4
+                        )
+                    }
+                }
+            }
+
             ArtworkInfoCard("Date", artwork.objectDate)
             ArtworkInfoCard("Medium", artwork.medium)
             ArtworkInfoCard("Dimensions", artwork.dimensions)
@@ -125,10 +152,17 @@ fun ArtworkDetailScreen(
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     Text(
-                        "Love this artwork? Share it with friends!",
+                        "💝 Love this artwork? Share it with friends!",
                         style = MaterialTheme.typography.bodyLarge,
                         textAlign = TextAlign.Center,
                         fontWeight = FontWeight.Medium
+                    )
+
+                    Text(
+                        "Help spread appreciation for this beautiful piece from the world's greatest museums. Your friends will thank you for introducing them to such masterful art!",
+                        style = MaterialTheme.typography.bodyMedium,
+                        textAlign = TextAlign.Center,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
 
                     Button(

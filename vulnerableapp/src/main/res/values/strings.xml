@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">DirtyStream</string>
+    <string name="app_name">FileShare Pro</string>
+    <string name="app_description">Easily receive and organize shared files</string>
+    <string name="ready_status">📱 Ready to receive shared content</string>
+    <string name="browse_files">📁 Browse Files</string>
+    <string name="how_it_works">💡 How it works:</string>
+    <string name="instructions">• Other apps can share files directly with FileShare Pro\n• Browse and select files manually\n• All content is safely organized in your app folder\n• Perfect for receiving photos, documents, and more!</string>
 </resources>

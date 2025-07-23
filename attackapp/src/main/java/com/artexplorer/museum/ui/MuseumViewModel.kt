@@ -8,6 +8,7 @@ import com.artexplorer.museum.data.MuseumObject
 import com.artexplorer.museum.data.MuseumRepository
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import android.util.Log
 
 class MuseumViewModel : ViewModel() {
     private val repository = MuseumRepository()

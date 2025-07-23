@@ -1,0 +1,26 @@
+<variant
+    name="debug"
+    package="com.example.dirtystream.attack"
+    minSdkVersion="24"
+    targetSdkVersion="36.0"
+    debuggable="true"
+    mergedManifest="build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml"
+    partialResultsDir="build/intermediates/unit_test_lint_partial_results/debug/lintAnalyzeDebugUnitTest/out"
+    desugaredMethodsFiles="/Users/williampark/.gradle/caches/8.13/transforms/39337b7b7bd9186fee490288c2a3cbbc/transformed/D8BackportedDesugaredMethods.txt">
+  <buildFeatures
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+  </sourceProviders>
+  <testSourceProviders>
+    <sourceProvider
+        manifests="src/test/AndroidManifest.xml"
+        javaDirectories="src/test/java:src/testDebug/java:src/test/kotlin:src/testDebug/kotlin"
+        assetsDirectories="src/test/assets:src/testDebug/assets"
+        unitTest="true"/>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <artifact
+      type="UNIT_TEST">
+  </artifact>
+</variant>

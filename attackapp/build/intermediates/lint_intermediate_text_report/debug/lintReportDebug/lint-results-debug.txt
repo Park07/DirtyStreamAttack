@@ -1,0 +1,160 @@
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:35: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:36: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:37: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+    implementation("com.google.android.material:material:1.11.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:22: Warning: Exported content providers can provide access to potentially sensitive data [ExportedContentProvider]
+        <provider
+         ~~~~~~~~
+
+   Explanation for issues of type "ExportedContentProvider":
+   Content providers are exported by default and any application on the system
+   can potentially use them to read and write data. If the content provider
+   provides access to sensitive data, it should be protected by specifying
+   export=false in the manifest or by protecting it with a permission that can
+   be granted to other applications.
+
+   https://goo.gle/ExportedContentProvider
+
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:33: Warning: Use the KTX extension function String.toColorInt instead? [UseKtx]
+                setBackgroundColor(Color.parseColor("#ffebee"))  // Light red background
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:128: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+                val maliciousUri = Uri.parse("content://com.example.dirtystream.attack.provider/attack.txt")
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseKtx":
+   The Android KTX libraries decorates the Android platform SDK as well as
+   various libraries with more convenient extension functions available from
+   Kotlin, allowing you to use default parameters, named parameters, and
+   more.
+
+   Available options:
+
+   **remove-defaults** (default is true):
+   Whether to skip arguments that match the defaults provided by the extension.
+
+   Extensions often provide default values for some of the parameters. For example:
+   ```kotlin
+   fun Path.readLines(charset: Charset = Charsets.UTF_8): List<String> { return Files.readAllLines(this, charset) }
+   ```
+   This lint check will by default automatically omit parameters that match the default, so if your code was calling
+
+   ```kotlin
+   Files.readAllLines(file, Charset.UTF_8)
+   ```
+   lint would replace this with
+   ```kotlin
+   file.readLines()
+   ```
+   rather than
+
+   ```kotlin
+   file.readLines(Charset.UTF_8
+   ```
+   You can turn this behavior off using this option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="remove-defaults" value="true" />
+       </issue>
+   </lint>
+   ```
+
+   **require-present** (default is true):
+   Whether to only offer extensions already available.
+
+   This option lets you only have lint suggest extension replacements if those extensions are already available on the class path (in other words, you're already depending on the library containing the extension method.)
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="require-present" value="true" />
+       </issue>
+   </lint>
+   ```
+
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:35: Warning: Use the existing version catalog reference (libs.androidx.appcompat) instead [UseTomlInstead]
+    implementation("androidx.appcompat:appcompat:1.6.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:36: Warning: Use the existing version catalog reference (libs.androidx.constraintlayout) instead [UseTomlInstead]
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:37: Warning: Use version catalog instead (com.google.android.material:material is already available as material, but using version 1.10.0 instead) [UseTomlInstead]
+    implementation("com.google.android.material:material:1.11.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseTomlInstead":
+   If your project is using a libs.versions.toml file, you should place all
+   Gradle dependencies in the TOML file. This lint check looks for version
+   declarations outside of the TOML file and suggests moving them (and in the
+   IDE, provides a quickfix to performing the operation automatically).
+
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:42: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                text = "🔴 ATTACK APP"
+                        ~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:54: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                text = "🚀 Launch DirtyStream Attack"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:75: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                text = "Ready to launch attack..."
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:87: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                text = "This will send a malicious file with path traversal to DirtyStream app"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:113: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                text = "ATTACK"
+                        ~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
+                               ~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
+                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
+                                                                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:159: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            statusText.text = "❌ Attack failed: ${e.message}"
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:159: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            statusText.text = "❌ Attack failed: ${e.message}"
+                               ~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+0 errors, 21 warnings

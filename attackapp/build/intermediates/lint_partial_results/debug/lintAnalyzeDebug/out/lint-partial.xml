@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.11.1" type="partial_results">
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="com.example.dirtystream.attack.AttackActivity"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <entry
+            name="model"
+            string="style[Theme_AppCompat_Light(R)];;;;"/>
+    </map>
+
+</incidents>

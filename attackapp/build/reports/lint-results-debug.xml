@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.11.1">
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts"
+            line="35"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation(&quot;androidx.constraintlayout:constraintlayout:2.1.4&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts"
+            line="36"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation(&quot;com.google.android.material:material:1.11.0&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts"
+            line="37"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="ExportedContentProvider"
+        severity="Warning"
+        message="Exported content providers can provide access to potentially sensitive data"
+        category="Security"
+        priority="5"
+        summary="Content provider does not require permission"
+        explanation="Content providers are exported by default and any application on the system can potentially use them to read and write data. If the content provider provides access to sensitive data, it should be protected by specifying `export=false` in the manifest or by protecting it with a permission that can be granted to other applications."
+        url="https://goo.gle/ExportedContentProvider"
+        urls="https://goo.gle/ExportedContentProvider"
+        errorLine1="        &lt;provider"
+        errorLine2="         ~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml"
+            line="22"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `String.toColorInt` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                setBackgroundColor(Color.parseColor(&quot;#ffebee&quot;))  // Light red background"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="33"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `String.toUri` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                val maliciousUri = Uri.parse(&quot;content://com.example.dirtystream.attack.provider/attack.txt&quot;)"
+        errorLine2="                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="128"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        severity="Warning"
+        message="Use the existing version catalog reference (`libs.androidx.appcompat`) instead"
+        category="Productivity"
+        priority="4"
+        summary="Use TOML Version Catalog Instead"
+        explanation="If your project is using a `libs.versions.toml` file, you should place all Gradle dependencies in the TOML file. This lint check looks for version declarations outside of the TOML file and suggests moving them (and in the IDE, provides a quickfix to performing the operation automatically)."
+        errorLine1="    implementation(&quot;androidx.appcompat:appcompat:1.6.1&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts"
+            line="35"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        severity="Warning"
+        message="Use the existing version catalog reference (`libs.androidx.constraintlayout`) instead"
+        category="Productivity"
+        priority="4"
+        summary="Use TOML Version Catalog Instead"
+        explanation="If your project is using a `libs.versions.toml` file, you should place all Gradle dependencies in the TOML file. This lint check looks for version declarations outside of the TOML file and suggests moving them (and in the IDE, provides a quickfix to performing the operation automatically)."
+        errorLine1="    implementation(&quot;androidx.constraintlayout:constraintlayout:2.1.4&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts"
+            line="36"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        severity="Warning"
+        message="Use version catalog instead (com.google.android.material:material is already available as `material`, but using version 1.10.0 instead)"
+        category="Productivity"
+        priority="4"
+        summary="Use TOML Version Catalog Instead"
+        explanation="If your project is using a `libs.versions.toml` file, you should place all Gradle dependencies in the TOML file. This lint check looks for version declarations outside of the TOML file and suggests moving them (and in the IDE, provides a quickfix to performing the operation automatically)."
+        errorLine1="    implementation(&quot;com.google.android.material:material:1.11.0&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts"
+            line="37"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                text = &quot;🔴 ATTACK APP&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="42"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                text = &quot;🚀 Launch DirtyStream Attack&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="54"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                text = &quot;Ready to launch attack...&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="75"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                text = &quot;This will send a malicious file with path traversal to DirtyStream app&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="87"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="                text = &quot;ATTACK&quot;"
+        errorLine2="                        ~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="113"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusText.text = &quot;✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt&quot;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusText.text = &quot;✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt&quot;"
+        errorLine2="                               ~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusText.text = &quot;✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt&quot;"
+        errorLine2="                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="48"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusText.text = &quot;✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt&quot;"
+        errorLine2="                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="79"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusText.text = &quot;✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt&quot;"
+        errorLine2="                                                                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="112"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusText.text = &quot;❌ Attack failed: ${e.message}&quot;"
+        errorLine2="                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="159"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        severity="Warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        category="Internationalization"
+        priority="6"
+        summary="TextView Internationalization"
+        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
+        url="https://developer.android.com/guide/topics/resources/localization.html"
+        urls="https://developer.android.com/guide/topics/resources/localization.html"
+        errorLine1="            statusText.text = &quot;❌ Attack failed: ${e.message}&quot;"
+        errorLine2="                               ~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt"
+            line="159"
+            column="32"/>
+    </issue>
+
+</issues>

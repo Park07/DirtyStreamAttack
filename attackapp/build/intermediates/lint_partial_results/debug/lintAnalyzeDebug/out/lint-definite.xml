@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.11.1" type="incidents">
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1">
+        <fix-replace
+            description="Change to 1.7.1"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.1"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="35"
+            column="20"
+            startOffset="668"
+            endLine="35"
+            endColumn="56"
+            endOffset="704"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1">
+        <fix-replace
+            description="Change to 2.2.1"
+            family="Update versions"
+            oldString="2.1.4"
+            replacement="2.2.1"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="36"
+            column="20"
+            startOffset="725"
+            endLine="36"
+            endColumn="70"
+            endOffset="775"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.12.0"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="37"
+            column="20"
+            startOffset="796"
+            endLine="37"
+            endColumn="65"
+            endOffset="841"/>
+    </incident>
+
+    <incident
+        id="ExportedContentProvider"
+        severity="warning"
+        message="Exported content providers can provide access to potentially sensitive data">
+        <fix-attribute
+            description="Set exported=&quot;false&quot;"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="exported"
+            value="false"/>
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="22"
+            column="10"
+            startOffset="775"
+            endLine="22"
+            endColumn="18"
+            endOffset="783"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `String.toColorInt` instead?">
+        <fix-replace
+            description="Replace with the toColorInt extension function"
+            family="Replace with the toColorInt extension function"
+            robot="true"
+            independent="true"
+            oldString="Color.parseColor(&quot;#ffebee&quot;)"
+            replacement="&quot;#ffebee&quot;.toColorInt()"
+            reformat="value"
+            imports="androidx.core.graphics.toColorInt"
+            priority="0">
+            <range
+                file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+                startOffset="960"
+                endOffset="987"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="33"
+            column="36"
+            startOffset="960"
+            endLine="33"
+            endColumn="63"
+            endOffset="987"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `String.toUri` instead?">
+        <fix-replace
+            description="Replace with the toUri extension function"
+            family="Replace with the toUri extension function"
+            robot="true"
+            independent="true"
+            oldString="Uri.parse(&quot;content://com.example.dirtystream.attack.provider/attack.txt&quot;)"
+            replacement="&quot;content://com.example.dirtystream.attack.provider/attack.txt&quot;.toUri()"
+            reformat="value"
+            imports="androidx.core.net.toUri"
+            priority="0">
+            <range
+                file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+                startOffset="4356"
+                endOffset="4429"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="128"
+            column="36"
+            startOffset="4356"
+            endLine="128"
+            endColumn="109"
+            endOffset="4429"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.appcompat`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-appcompat`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.appcompat"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="668"
+                endOffset="704"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="35"
+            column="20"
+            startOffset="668"
+            endLine="35"
+            endColumn="56"
+            endOffset="704"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.constraintlayout`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-constraintlayout`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.constraintlayout"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="725"
+                endOffset="775"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="36"
+            column="20"
+            startOffset="725"
+            endLine="36"
+            endColumn="70"
+            endOffset="775"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead (com.google.android.material:material is already available as `material`, but using version 1.10.0 instead)">
+        <fix-alternatives>
+            <fix-composite
+                description="Replace with new library catalog declaration for com-google-android-material-material-v1110-x20"
+                robot="true"
+                independent="true">
+                <fix-replace
+                    description="Replace with comGoogleAndroidMaterialMaterial19 = &quot;1.11.0&quot;..."
+                    robot="true"
+                    independent="true"
+                    oldString="_lint_insert_begin_"
+                    replacement="comGoogleAndroidMaterialMaterial19 = &quot;1.11.0&quot;&#xA;"
+                    priority="0">
+                    <range
+                        file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                        startOffset="26"
+                        endOffset="26"/>
+                </fix-replace>
+                <fix-replace
+                    description="Replace with com-google-android-material-material-v1110-x20 = { module = &quot;com.google.android.material:material&quot;, version.ref = &quot;comGoogleAndroidMaterialMaterial19&quot; }..."
+                    robot="true"
+                    independent="true"
+                    oldString="_lint_insert_begin_"
+                    replacement="com-google-android-material-material-v1110-x20 = { module = &quot;com.google.android.material:material&quot;, version.ref = &quot;comGoogleAndroidMaterialMaterial19&quot; }&#xA;"
+                    priority="0">
+                    <range
+                        file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                        startOffset="399"
+                        endOffset="399"/>
+                </fix-replace>
+                <fix-replace
+                    description="Replace with libs.com.google.android.material.material.v1110.x20"
+                    robot="true"
+                    independent="true"
+                    replacement="libs.com.google.android.material.material.v1110.x20"
+                    priority="0">
+                    <range
+                        file="${:attackapp*projectDir}/build.gradle.kts"
+                        startOffset="796"
+                        endOffset="841"/>
+                </fix-replace>
+            </fix-composite>
+            <fix-replace
+                description="Replace with existing version catalog reference `material` (version 1.10.0)"
+                replacement="libs.material"
+                priority="0">
+                <range
+                    file="${:attackapp*projectDir}/build.gradle.kts"
+                    startOffset="796"
+                    endOffset="841"/>
+            </fix-replace>
+        </fix-alternatives>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="37"
+            column="20"
+            startOffset="796"
+            endLine="37"
+            endColumn="65"
+            endOffset="841"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="42"
+            column="25"
+            startOffset="1311"
+            endLine="42"
+            endColumn="38"
+            endOffset="1324"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="54"
+            column="25"
+            startOffset="1753"
+            endLine="54"
+            endColumn="53"
+            endOffset="1781"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="75"
+            column="25"
+            startOffset="2502"
+            endLine="75"
+            endColumn="50"
+            endOffset="2527"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="87"
+            column="25"
+            startOffset="2956"
+            endLine="87"
+            endColumn="95"
+            endOffset="3026"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="113"
+            column="25"
+            startOffset="3948"
+            endLine="113"
+            endColumn="31"
+            endOffset="3954"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="31"
+            startOffset="4900"
+            endLine="143"
+            endColumn="140"
+            endOffset="5009"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="32"
+            startOffset="4901"
+            endLine="143"
+            endColumn="46"
+            endOffset="4915"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="48"
+            startOffset="4917"
+            endLine="143"
+            endColumn="77"
+            endOffset="4946"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="79"
+            startOffset="4948"
+            endLine="143"
+            endColumn="110"
+            endOffset="4979"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="143"
+            column="112"
+            startOffset="4981"
+            endLine="143"
+            endColumn="139"
+            endOffset="5008"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="159"
+            column="31"
+            startOffset="5767"
+            endLine="159"
+            endColumn="62"
+            endOffset="5798"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
+            line="159"
+            column="32"
+            startOffset="5768"
+            endLine="159"
+            endColumn="49"
+            endOffset="5785"/>
+    </incident>
+
+</incidents>

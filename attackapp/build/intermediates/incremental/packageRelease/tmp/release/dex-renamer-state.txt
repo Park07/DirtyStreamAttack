@@ -1,0 +1,4 @@
+#Wed Jul 23 16:12:47 AEST 2025
+base.0=/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build/intermediates/dex/release/mergeDexRelease/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

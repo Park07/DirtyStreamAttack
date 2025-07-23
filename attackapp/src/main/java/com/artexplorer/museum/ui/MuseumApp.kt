@@ -1,6 +1,7 @@
 // File: attackapp/src/main/java/com/artexplorer/museum/ui/MuseumApp.kt
 package com.artexplorer.museum.ui
 
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -75,58 +76,58 @@ fun MuseumApp(
 @Composable
 fun ArtworkGridScreen(
     artworks: List<MuseumObject>,
-    loading: Boolean,
+    loading: Boolean, // It's okay to keep this for now
     onArtworkClick: (MuseumObject) -> Unit,
     onShare: (MuseumObject) -> Unit
 ) {
-    when {
-        loading -> {
-            Box(
-                modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(16.dp)
-                ) {
-                    CircularProgressIndicator(
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                    Text(
-                        "Loading beautiful artworks...",
-                        style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-            }
-        }
+    Log.d("ArtworkGridScreen", "Recomposing with loading=$loading and artworks.size=${artworks.size}")
 
-        artworks.isEmpty() -> {
-            Box(
-                modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
+    // Use a simple if/else block for clarity
+    if (loading && artworks.isEmpty()) {
+        // This state is only shown on the initial load
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
+                CircularProgressIndicator(
+                    color = MaterialTheme.colorScheme.primary
+                )
                 Text(
-                    "No artworks available",
-                    style = MaterialTheme.typography.bodyLarge
+                    "Loading beautiful artworks...",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
         }
-
-        else -> {
-            LazyVerticalGrid(
-                columns = GridCells.Adaptive(180.dp),
-                contentPadding = PaddingValues(16.dp),
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                items(artworks) { artwork ->
-                    ArtworkCard(
-                        artwork = artwork,
-                        onClick = { onArtworkClick(artwork) },
-                        onShare = { onShare(artwork) }
-                    )
-                }
+    } else if (artworks.isEmpty()) {
+        // This state is shown if loading is done but there's still no data
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                "No artworks available",
+                style = MaterialTheme.typography.bodyLarge
+            )
+        }
+    } else {
+        // Once we have artworks, show the grid
+        LazyVerticalGrid(
+            columns = GridCells.Adaptive(180.dp),
+            contentPadding = PaddingValues(16.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            items(artworks) { artwork ->
+                ArtworkCard(
+                    artwork = artwork,
+                    onClick = { onArtworkClick(artwork) },
+                    onShare = { onShare(artwork) }
+                )
             }
         }
     }
@@ -138,6 +139,7 @@ fun ArtworkCard(
     onClick: () -> Unit,
     onShare: () -> Unit
 ) {
+    Log.d("ArtworkCard", "Displaying artwork: ${artwork.title}, Image URL: ${artwork.primaryImageSmall}")
     Card(
         modifier = Modifier
             .fillMaxWidth()

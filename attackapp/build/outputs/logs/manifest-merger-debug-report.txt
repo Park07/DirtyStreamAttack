@@ -170,7 +170,7 @@ ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/ma
 	android:enabled
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:31:13-35
 	android:authorities
-		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:30:13-71
+		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:30:13-66
 	android:exported
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:32:13-36
 	android:name

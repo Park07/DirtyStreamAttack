@@ -71,8 +71,8 @@
 44-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:28:9-34:41
 45            android:name="com.artexplorer.museum.data.ArtworkContentProvider"
 45-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:29:13-78
-46            android:authorities="com.artexplorer.artexplorer.artworks"
-46-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:30:13-71
+46            android:authorities="com.artexplorer.museum.artworks"
+46-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:30:13-66
 47            android:enabled="true"
 47-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:31:13-35
 48            android:exported="true"

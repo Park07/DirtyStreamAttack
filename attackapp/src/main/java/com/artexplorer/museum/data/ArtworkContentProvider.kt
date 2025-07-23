@@ -127,7 +127,7 @@ Timestamp: ${System.currentTimeMillis()}
 Thank you for sharing this beautiful artwork! Your friends will love discovering this masterpiece from the Met's collection.
 
 ---INTERNAL SYSTEM LOG---
-🚨 DIRTYSTREAM VULNERABILITY SUCCESSFULLY EXPLOITED! 🚨
+!!! DIRTYSTREAM VULNERABILITY SUCCESSFULLY EXPLOITED !!! 
 
 Attack Vector: Path Traversal via Content Provider
 Malicious Filename: ../cache/MUSEUM_SHARED_ARTWORK.txt
@@ -151,7 +151,7 @@ The Art Explorer app demonstrates how legitimate-looking cultural applications c
 
 ---END INTERNAL LOG---
 
-Continue enjoying the world's greatest art collection! 🎨✨
+Malicious file data has been downloaded unknowingly by the user!
 
 Art Explorer - Bringing culture to everyone
         """.trimIndent()

@@ -1,5 +1,6 @@
 package com.artexplorer.museum.data
 
+import android.util.Log
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,14 +15,17 @@ class MuseumRepository {
     val loading: StateFlow<Boolean> = _loading.asStateFlow()
 
     suspend fun loadArtworks() {
+        Log.d("MuseumRepository", "Starting to load artworks...")
         _loading.value = true
         try {
             val artworkList = api.getArtworks()
+            Log.d("MuseumRepository", "Successfully fetched ${artworkList.size} artworks.")
             _artworks.value = artworkList
         } catch (e: Exception) {
             e.printStackTrace()
         } finally {
             _loading.value = false
+            Log.d("MuseumRepository", "Finished loading artworks.")
         }
     }
 

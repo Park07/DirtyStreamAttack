@@ -17,6 +17,7 @@ class MuseumViewModel : ViewModel() {
     val loading: StateFlow<Boolean> = repository.loading
 
     fun loadArtworks() {
+        Log.d("MuseumViewModel", "loadArtworks called.")
         viewModelScope.launch {
             repository.loadArtworks()
         }

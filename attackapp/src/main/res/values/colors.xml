@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Museum-themed colors - warm, cultural, trustworthy -->
+    <color name="museum_primary">#B85C3A</color>
+    <color name="museum_primary_variant">#9C4221</color>
+    <color name="museum_secondary">#8B645F</color>
+    <color name="museum_surface">#FFF8F6</color>
+    <color name="museum_background">#FFFBFF</color>
+
+    <!-- Standard colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_light">#FFF0F0F0</color>
+    <color name="gray_dark">#FF666666</color>
+</resources>

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.dirtystream.attack.attackapp-mergeDebugResources-29:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "com.artexplorer.museum.attackapp-mergeDebugResources-63:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/williampark/.gradle/caches/8.13/transforms/336c5e5667636b1339b4cdd7bb3b8f30/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/Users/williampark/.gradle/caches/8.13/transforms/53e316c10b333fa1b13bc2dab6803231/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

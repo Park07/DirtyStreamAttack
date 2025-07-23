@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MuseumTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/museum_primary</item>
+        <item name="colorPrimaryVariant">@color/museum_primary_variant</item>
+        <item name="colorSecondary">@color/museum_secondary</item>
+        <item name="android:statusBarColor">@color/museum_primary</item>
+        <item name="android:navigationBarColor">@color/museum_surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
+

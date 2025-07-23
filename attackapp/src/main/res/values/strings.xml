@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Art Explorer</string>
+    <string name="museum_title">Metropolitan Museum Collection</string>
+    <string name="loading_artworks">Loading beautiful artworks...</string>
+    <string name="share_artwork">Share this artwork</string>
+    <string name="artwork_shared">✨ Artwork shared successfully! Thank you for spreading art appreciation! 🎨</string>
+    <string name="share_failed">❌ Failed to share artwork. Please try again.</string>
+    <string name="no_artworks">No artworks available</string>
+    <string name="back">Back</string>
+
+    <!-- Detail screen labels -->
+    <string name="label_artist">Artist</string>
+    <string name="label_date">Date</string>
+    <string name="label_medium">Medium</string>
+    <string name="label_dimensions">Dimensions</string>
+    <string name="label_department">Department</string>
+    <string name="label_repository">Repository</string>
+    <string name="label_credit">Credit</string>
+
+    <!-- Share prompts -->
+    <string name="share_prompt">Love this artwork? Share it with friends!</string>
+    <string name="share_button">Share This Masterpiece</string>
+</resources>

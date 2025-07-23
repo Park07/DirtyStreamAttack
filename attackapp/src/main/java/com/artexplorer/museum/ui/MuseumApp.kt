@@ -6,7 +6,6 @@ import androidx.compose.foundation.lazy.grid.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Share
-import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -43,11 +42,6 @@ fun MuseumApp(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    Icon(
-                        Icons.Default.Palette,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.primary
-                    )
                     Text(
                         "Art Explorer",
                         style = MaterialTheme.typography.headlineSmall,

@@ -1,8 +1,8 @@
 <variant
     name="debug"
-    package="com.example.dirtystream.attack"
+    package="com.artexplorer.museum"
     minSdkVersion="24"
-    targetSdkVersion="36.0"
+    targetSdkVersion="36"
     debuggable="true"
     mergedManifest="build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml"
     manifestMergeReport="build/outputs/logs/manifest-merger-debug-report.txt"

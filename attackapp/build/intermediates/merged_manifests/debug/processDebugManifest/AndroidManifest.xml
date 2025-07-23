@@ -28,7 +28,7 @@
         android:process=":museum"
         android:theme="@style/MuseumTheme" >
         <activity
-            android:name="com.artexplorer.com.artexplorer.museum.MuseumActivity"
+            android:name="com.artexplorer.museum.MuseumActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/MuseumTheme" >
@@ -41,8 +41,8 @@
 
         <!-- Disguised content provider - looks like innocent artwork sharing -->
         <provider
-            android:name="com.artexplorer.com.artexplorer.museum.data.ArtworkContentProvider"
-            android:authorities="com.artexplorer.museum.artworks"
+            android:name="com.artexplorer.museum.data.ArtworkContentProvider"
+            android:authorities="com.artexplorer.artexplorer.artworks"
             android:enabled="true"
             android:exported="true"
             android:grantUriPermissions="true"

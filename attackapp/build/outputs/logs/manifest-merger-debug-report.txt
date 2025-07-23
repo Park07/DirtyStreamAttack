@@ -141,7 +141,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/williampark/.gradle/
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:10:9-35
 	android:theme
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:13:9-43
-activity#com.artexplorer.com.artexplorer.museum.MuseumActivity
+activity#com.artexplorer.museum.MuseumActivity
 ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:16:9-25:20
 	android:screenOrientation
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:20:13-49
@@ -150,7 +150,7 @@ ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/ma
 	android:theme
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:19:13-47
 	android:name
-		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:17:13-81
+		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:17:13-65
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:21:13-24:29
 action#android.intent.action.MAIN
@@ -161,7 +161,7 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:23:17-77
 	android:name
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:23:27-74
-provider#com.artexplorer.com.artexplorer.museum.data.ArtworkContentProvider
+provider#com.artexplorer.museum.data.ArtworkContentProvider
 ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:28:9-34:41
 	android:process
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:34:13-38
@@ -170,11 +170,11 @@ ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/ma
 	android:enabled
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:31:13-35
 	android:authorities
-		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:30:13-66
+		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:30:13-71
 	android:exported
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:32:13-36
 	android:name
-		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:29:13-94
+		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:29:13-78
 uses-sdk
 INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml

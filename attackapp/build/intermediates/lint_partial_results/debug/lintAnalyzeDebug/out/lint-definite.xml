@@ -1,64 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<incidents format="6" by="lint 8.11.1" type="incidents">
+<incidents format="6" by="lint 8.6.1" type="incidents">
 
     <incident
-        id="GradleDependency"
+        id="DiscouragedApi"
         severity="warning"
-        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1">
-        <fix-replace
-            description="Change to 1.7.1"
-            family="Update versions"
-            oldString="1.6.1"
-            replacement="1.7.1"
-            priority="0"/>
+        message="Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed.">
         <location
-            file="${:attackapp*projectDir}/build.gradle.kts"
-            line="35"
-            column="20"
-            startOffset="668"
-            endLine="35"
-            endColumn="56"
-            endOffset="704"/>
-    </incident>
-
-    <incident
-        id="GradleDependency"
-        severity="warning"
-        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1">
-        <fix-replace
-            description="Change to 2.2.1"
-            family="Update versions"
-            oldString="2.1.4"
-            replacement="2.2.1"
-            priority="0"/>
-        <location
-            file="${:attackapp*projectDir}/build.gradle.kts"
-            line="36"
-            column="20"
-            startOffset="725"
-            endLine="36"
-            endColumn="70"
-            endOffset="775"/>
-    </incident>
-
-    <incident
-        id="GradleDependency"
-        severity="warning"
-        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0">
-        <fix-replace
-            description="Change to 1.12.0"
-            family="Update versions"
-            oldString="1.11.0"
-            replacement="1.12.0"
-            priority="0"/>
-        <location
-            file="${:attackapp*projectDir}/build.gradle.kts"
-            line="37"
-            column="20"
-            startOffset="796"
-            endLine="37"
-            endColumn="65"
-            endOffset="841"/>
+            file="${:attackapp*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="20"
+            column="13"
+            startOffset="758"
+            endLine="20"
+            endColumn="49"
+            endOffset="794"/>
     </incident>
 
     <incident
@@ -72,70 +26,81 @@
             value="false"/>
         <location
             file="${:attackapp*debug*MAIN*sourceProvider*0*manifest*0}"
-            line="22"
+            line="28"
             column="10"
-            startOffset="775"
-            endLine="22"
+            startOffset="1111"
+            endLine="28"
             endColumn="18"
-            endOffset="783"/>
+            endOffset="1119"/>
     </incident>
 
     <incident
-        id="UseKtx"
+        id="TypographyEllipsis"
         severity="warning"
-        message="Use the KTX extension function `String.toColorInt` instead?">
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?">
         <fix-replace
-            description="Replace with the toColorInt extension function"
-            family="Replace with the toColorInt extension function"
-            robot="true"
-            independent="true"
-            oldString="Color.parseColor(&quot;#ffebee&quot;)"
-            replacement="&quot;#ffebee&quot;.toColorInt()"
-            reformat="value"
-            imports="androidx.core.graphics.toColorInt"
-            priority="0">
-            <range
-                file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-                startOffset="960"
-                endOffset="987"/>
-        </fix-replace>
+            description="Replace with …"
+            oldString="..."
+            replacement="…"
+            priority="0"/>
         <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="33"
-            column="36"
-            startOffset="960"
-            endLine="33"
-            endColumn="63"
-            endOffset="987"/>
+            file="${:attackapp*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="5"
+            column="37"
+            startOffset="209"
+            endLine="5"
+            endColumn="66"
+            endOffset="238"/>
     </incident>
 
     <incident
-        id="UseKtx"
+        id="UseTomlInstead"
         severity="warning"
-        message="Use the KTX extension function `String.toUri` instead?">
+        message="Use the existing version catalog reference (`libs.androidx.core.ktx`) instead">
         <fix-replace
-            description="Replace with the toUri extension function"
-            family="Replace with the toUri extension function"
+            description="Replace with existing version catalog reference `androidx-core-ktx`"
             robot="true"
             independent="true"
-            oldString="Uri.parse(&quot;content://com.example.dirtystream.attack.provider/attack.txt&quot;)"
-            replacement="&quot;content://com.example.dirtystream.attack.provider/attack.txt&quot;.toUri()"
-            reformat="value"
-            imports="androidx.core.net.toUri"
+            replacement="libs.androidx.core.ktx"
             priority="0">
             <range
-                file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-                startOffset="4356"
-                endOffset="4429"/>
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="1242"
+                endOffset="1273"/>
         </fix-replace>
         <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="128"
-            column="36"
-            startOffset="4356"
-            endLine="128"
-            endColumn="109"
-            endOffset="4429"/>
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="58"
+            column="20"
+            startOffset="1242"
+            endLine="58"
+            endColumn="51"
+            endOffset="1273"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.lifecycle.runtime.ktx`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-lifecycle-runtime-ktx`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.lifecycle.runtime.ktx"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="1294"
+                endOffset="1342"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="59"
+            column="20"
+            startOffset="1294"
+            endLine="59"
+            endColumn="68"
+            endOffset="1342"/>
     </incident>
 
     <incident
@@ -150,275 +115,1320 @@
             priority="0">
             <range
                 file="${:attackapp*projectDir}/build.gradle.kts"
-                startOffset="668"
-                endOffset="704"/>
+                startOffset="1363"
+                endOffset="1399"/>
         </fix-replace>
         <location
             file="${:attackapp*projectDir}/build.gradle.kts"
-            line="35"
+            line="60"
             column="20"
-            startOffset="668"
-            endLine="35"
+            startOffset="1363"
+            endLine="60"
             endColumn="56"
-            endOffset="704"/>
+            endOffset="1399"/>
     </incident>
 
     <incident
         id="UseTomlInstead"
         severity="warning"
-        message="Use the existing version catalog reference (`libs.androidx.constraintlayout`) instead">
+        message="Use the existing version catalog reference (`libs.material`) instead">
         <fix-replace
-            description="Replace with existing version catalog reference `androidx-constraintlayout`"
+            description="Replace with existing version catalog reference `material`"
             robot="true"
             independent="true"
-            replacement="libs.androidx.constraintlayout"
+            replacement="libs.material"
             priority="0">
             <range
                 file="${:attackapp*projectDir}/build.gradle.kts"
-                startOffset="725"
-                endOffset="775"/>
+                startOffset="1420"
+                endOffset="1465"/>
         </fix-replace>
         <location
             file="${:attackapp*projectDir}/build.gradle.kts"
-            line="36"
+            line="61"
             column="20"
-            startOffset="725"
-            endLine="36"
-            endColumn="70"
-            endOffset="775"/>
+            startOffset="1420"
+            endLine="61"
+            endColumn="65"
+            endOffset="1465"/>
     </incident>
 
     <incident
         id="UseTomlInstead"
         severity="warning"
-        message="Use version catalog instead (com.google.android.material:material is already available as `material`, but using version 1.10.0 instead)">
-        <fix-alternatives>
-            <fix-composite
-                description="Replace with new library catalog declaration for com-google-android-material-material-v1110-x20"
-                robot="true"
-                independent="true">
-                <fix-replace
-                    description="Replace with comGoogleAndroidMaterialMaterial19 = &quot;1.11.0&quot;..."
-                    robot="true"
-                    independent="true"
-                    oldString="_lint_insert_begin_"
-                    replacement="comGoogleAndroidMaterialMaterial19 = &quot;1.11.0&quot;&#xA;"
-                    priority="0">
-                    <range
-                        file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
-                        startOffset="26"
-                        endOffset="26"/>
-                </fix-replace>
-                <fix-replace
-                    description="Replace with com-google-android-material-material-v1110-x20 = { module = &quot;com.google.android.material:material&quot;, version.ref = &quot;comGoogleAndroidMaterialMaterial19&quot; }..."
-                    robot="true"
-                    independent="true"
-                    oldString="_lint_insert_begin_"
-                    replacement="com-google-android-material-material-v1110-x20 = { module = &quot;com.google.android.material:material&quot;, version.ref = &quot;comGoogleAndroidMaterialMaterial19&quot; }&#xA;"
-                    priority="0">
-                    <range
-                        file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
-                        startOffset="399"
-                        endOffset="399"/>
-                </fix-replace>
-                <fix-replace
-                    description="Replace with libs.com.google.android.material.material.v1110.x20"
-                    robot="true"
-                    independent="true"
-                    replacement="libs.com.google.android.material.material.v1110.x20"
-                    priority="0">
-                    <range
-                        file="${:attackapp*projectDir}/build.gradle.kts"
-                        startOffset="796"
-                        endOffset="841"/>
-                </fix-replace>
-            </fix-composite>
+        message="Use the existing version catalog reference (`libs.androidx.compose.bom`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-compose-bom`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.compose.bom"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="1506"
+                endOffset="1557"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="64"
+            column="20"
+            startOffset="1506"
+            endLine="64"
+            endColumn="71"
+            endOffset="1557"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui"
+            robot="true">
             <fix-replace
-                description="Replace with existing version catalog reference `material` (version 1.10.0)"
-                replacement="libs.material"
+                description="Replace with androidx-compose-ui-ui = { module = &quot;androidx.compose.ui:ui&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-ui-ui = { module = &quot;androidx.compose.ui:ui&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                    startOffset="236"
+                    endOffset="236"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.ui.ui"
+                robot="true"
+                replacement="libs.androidx.compose.ui.ui"
                 priority="0">
                 <range
                     file="${:attackapp*projectDir}/build.gradle.kts"
-                    startOffset="796"
-                    endOffset="841"/>
+                    startOffset="1578"
+                    endOffset="1602"/>
             </fix-replace>
-        </fix-alternatives>
+        </fix-composite>
         <location
             file="${:attackapp*projectDir}/build.gradle.kts"
-            line="37"
+            line="65"
             column="20"
-            startOffset="796"
-            endLine="37"
-            endColumn="65"
-            endOffset="841"/>
+            startOffset="1578"
+            endLine="65"
+            endColumn="44"
+            endOffset="1602"/>
     </incident>
 
     <incident
-        id="SetTextI18n"
+        id="UseTomlInstead"
         severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-graphics"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-compose-ui-ui-graphics = { module = &quot;androidx.compose.ui:ui-graphics&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-ui-ui-graphics = { module = &quot;androidx.compose.ui:ui-graphics&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                    startOffset="236"
+                    endOffset="236"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.ui.ui.graphics"
+                robot="true"
+                replacement="libs.androidx.compose.ui.ui.graphics"
+                priority="0">
+                <range
+                    file="${:attackapp*projectDir}/build.gradle.kts"
+                    startOffset="1623"
+                    endOffset="1656"/>
+            </fix-replace>
+        </fix-composite>
         <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="42"
-            column="25"
-            startOffset="1311"
-            endLine="42"
-            endColumn="38"
-            endOffset="1324"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="54"
-            column="25"
-            startOffset="1753"
-            endLine="54"
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="66"
+            column="20"
+            startOffset="1623"
+            endLine="66"
             endColumn="53"
-            endOffset="1781"/>
+            endOffset="1656"/>
     </incident>
 
     <incident
-        id="SetTextI18n"
+        id="UseTomlInstead"
         severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-tooling-preview"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-compose-ui-ui-tooling-preview = { module = &quot;androidx.compose.ui:ui-tooling-preview&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-ui-ui-tooling-preview = { module = &quot;androidx.compose.ui:ui-tooling-preview&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                    startOffset="236"
+                    endOffset="236"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.ui.ui.tooling.preview"
+                robot="true"
+                replacement="libs.androidx.compose.ui.ui.tooling.preview"
+                priority="0">
+                <range
+                    file="${:attackapp*projectDir}/build.gradle.kts"
+                    startOffset="1677"
+                    endOffset="1717"/>
+            </fix-replace>
+        </fix-composite>
         <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="75"
-            column="25"
-            startOffset="2502"
-            endLine="75"
-            endColumn="50"
-            endOffset="2527"/>
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="67"
+            column="20"
+            startOffset="1677"
+            endLine="67"
+            endColumn="60"
+            endOffset="1717"/>
     </incident>
 
     <incident
-        id="SetTextI18n"
+        id="UseTomlInstead"
         severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-material3-material3"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-compose-material3-material3 = { module = &quot;androidx.compose.material3:material3&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-material3-material3 = { module = &quot;androidx.compose.material3:material3&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                    startOffset="236"
+                    endOffset="236"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.material3.material3"
+                robot="true"
+                replacement="libs.androidx.compose.material3.material3"
+                priority="0">
+                <range
+                    file="${:attackapp*projectDir}/build.gradle.kts"
+                    startOffset="1738"
+                    endOffset="1776"/>
+            </fix-replace>
+        </fix-composite>
         <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="87"
-            column="25"
-            startOffset="2956"
-            endLine="87"
-            endColumn="95"
-            endOffset="3026"/>
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="68"
+            column="20"
+            startOffset="1738"
+            endLine="68"
+            endColumn="58"
+            endOffset="1776"/>
     </incident>
 
     <incident
-        id="SetTextI18n"
+        id="UseTomlInstead"
         severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        message="Use the existing version catalog reference (`libs.androidx.activity.compose`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-activity-compose`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.activity.compose"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="1797"
+                endOffset="1839"/>
+        </fix-replace>
         <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="113"
-            column="25"
-            startOffset="3948"
-            endLine="113"
-            endColumn="31"
-            endOffset="3954"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="143"
-            column="31"
-            startOffset="4900"
-            endLine="143"
-            endColumn="140"
-            endOffset="5009"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="143"
-            column="32"
-            startOffset="4901"
-            endLine="143"
-            endColumn="46"
-            endOffset="4915"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="143"
-            column="48"
-            startOffset="4917"
-            endLine="143"
-            endColumn="77"
-            endOffset="4946"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="143"
-            column="79"
-            startOffset="4948"
-            endLine="143"
-            endColumn="110"
-            endOffset="4979"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
-        <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="143"
-            column="112"
-            startOffset="4981"
-            endLine="143"
-            endColumn="139"
-            endOffset="5008"/>
-    </incident>
-
-    <incident
-        id="SetTextI18n"
-        severity="warning"
-        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
-        <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="159"
-            column="31"
-            startOffset="5767"
-            endLine="159"
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="69"
+            column="20"
+            startOffset="1797"
+            endLine="69"
             endColumn="62"
-            endOffset="5798"/>
+            endOffset="1839"/>
     </incident>
 
     <incident
-        id="SetTextI18n"
+        id="UseTomlInstead"
         severity="warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        message="Use the existing version catalog reference (`libs.androidx.lifecycle.viewmodel.compose`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-lifecycle-viewmodel-compose`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.lifecycle.viewmodel.compose"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="1878"
+                endOffset="1932"/>
+        </fix-replace>
         <location
-            file="${:attackapp*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/dirtystream/attack/AttackActivity.kt"
-            line="159"
-            column="32"
-            startOffset="5768"
-            endLine="159"
-            endColumn="49"
-            endOffset="5785"/>
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="72"
+            column="20"
+            startOffset="1878"
+            endLine="72"
+            endColumn="74"
+            endOffset="1932"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.navigation.compose`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-navigation-compose`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.navigation.compose"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="1972"
+                endOffset="2018"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="75"
+            column="20"
+            startOffset="1972"
+            endLine="75"
+            endColumn="66"
+            endOffset="2018"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.ktor.client.core`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `ktor-client-core`"
+            robot="true"
+            independent="true"
+            replacement="libs.ktor.client.core"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2058"
+                endOffset="2090"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="78"
+            column="20"
+            startOffset="2058"
+            endLine="78"
+            endColumn="52"
+            endOffset="2090"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.ktor.client.android`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `ktor-client-android`"
+            robot="true"
+            independent="true"
+            replacement="libs.ktor.client.android"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2111"
+                endOffset="2146"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="79"
+            column="20"
+            startOffset="2111"
+            endLine="79"
+            endColumn="55"
+            endOffset="2146"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.ktor.client.content.negotiation`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `ktor-client-content-negotiation`"
+            robot="true"
+            independent="true"
+            replacement="libs.ktor.client.content.negotiation"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2167"
+                endOffset="2214"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="80"
+            column="20"
+            startOffset="2167"
+            endLine="80"
+            endColumn="67"
+            endOffset="2214"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.ktor.serialization.kotlinx.json`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `ktor-serialization-kotlinx-json`"
+            robot="true"
+            independent="true"
+            replacement="libs.ktor.serialization.kotlinx.json"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2235"
+                endOffset="2282"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="81"
+            column="20"
+            startOffset="2235"
+            endLine="81"
+            endColumn="67"
+            endOffset="2282"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.kotlinx.serialization.json`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `kotlinx-serialization-json`"
+            robot="true"
+            independent="true"
+            replacement="libs.kotlinx.serialization.json"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2325"
+                endOffset="2381"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="84"
+            column="20"
+            startOffset="2325"
+            endLine="84"
+            endColumn="76"
+            endOffset="2381"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for palette-ktx"
+            robot="true">
+            <fix-replace
+                description="Replace with palette-ktx-version = &quot;1.0.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="palette-ktx-version = &quot;1.0.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                    startOffset="153"
+                    endOffset="153"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with palette-ktx = { module = &quot;androidx.palette:palette-ktx&quot;, version.ref = &quot;palette-ktx-version&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="palette-ktx = { module = &quot;androidx.palette:palette-ktx&quot;, version.ref = &quot;palette-ktx-version&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                    startOffset="2958"
+                    endOffset="2958"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.palette.ktx"
+                robot="true"
+                replacement="libs.palette.ktx"
+                priority="0">
+                <range
+                    file="${:attackapp*projectDir}/build.gradle.kts"
+                    startOffset="2419"
+                    endOffset="2455"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="87"
+            column="20"
+            startOffset="2419"
+            endLine="87"
+            endColumn="56"
+            endOffset="2455"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.coil.compose`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `coil-compose`"
+            robot="true"
+            independent="true"
+            replacement="libs.coil.compose"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2498"
+                endOffset="2529"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="90"
+            column="20"
+            startOffset="2498"
+            endLine="90"
+            endColumn="51"
+            endOffset="2529"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.kotlinx.coroutines.android`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `kotlinx-coroutines-android`"
+            robot="true"
+            independent="true"
+            replacement="libs.kotlinx.coroutines.android"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2569"
+                endOffset="2625"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="93"
+            column="20"
+            startOffset="2569"
+            endLine="93"
+            endColumn="76"
+            endOffset="2625"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.junit`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `junit`"
+            robot="true"
+            independent="true"
+            replacement="libs.junit"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2666"
+                endOffset="2686"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="96"
+            column="24"
+            startOffset="2666"
+            endLine="96"
+            endColumn="44"
+            endOffset="2686"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.junit`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-junit`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.junit"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2718"
+                endOffset="2749"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="97"
+            column="31"
+            startOffset="2718"
+            endLine="97"
+            endColumn="62"
+            endOffset="2749"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.espresso.core`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-espresso-core`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.espresso.core"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2781"
+                endOffset="2825"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="98"
+            column="31"
+            startOffset="2781"
+            endLine="98"
+            endColumn="75"
+            endOffset="2825"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use the existing version catalog reference (`libs.androidx.compose.bom`) instead">
+        <fix-replace
+            description="Replace with existing version catalog reference `androidx-compose-bom`"
+            robot="true"
+            independent="true"
+            replacement="libs.androidx.compose.bom"
+            priority="0">
+            <range
+                file="${:attackapp*projectDir}/build.gradle.kts"
+                startOffset="2857"
+                endOffset="2908"/>
+        </fix-replace>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="99"
+            column="31"
+            startOffset="2857"
+            endLine="99"
+            endColumn="82"
+            endOffset="2908"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-test-junit4"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-compose-ui-ui-test-junit4 = { module = &quot;androidx.compose.ui:ui-test-junit4&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-ui-ui-test-junit4 = { module = &quot;androidx.compose.ui:ui-test-junit4&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                    startOffset="236"
+                    endOffset="236"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.ui.ui.test.junit4"
+                robot="true"
+                replacement="libs.androidx.compose.ui.ui.test.junit4"
+                priority="0">
+                <range
+                    file="${:attackapp*projectDir}/build.gradle.kts"
+                    startOffset="2940"
+                    endOffset="2976"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="100"
+            column="31"
+            startOffset="2940"
+            endLine="100"
+            endColumn="67"
+            endOffset="2976"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-tooling"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-compose-ui-ui-tooling = { module = &quot;androidx.compose.ui:ui-tooling&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-ui-ui-tooling = { module = &quot;androidx.compose.ui:ui-tooling&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                    startOffset="236"
+                    endOffset="236"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.ui.ui.tooling"
+                robot="true"
+                replacement="libs.androidx.compose.ui.ui.tooling"
+                priority="0">
+                <range
+                    file="${:attackapp*projectDir}/build.gradle.kts"
+                    startOffset="3002"
+                    endOffset="3034"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="101"
+            column="25"
+            startOffset="3002"
+            endLine="101"
+            endColumn="57"
+            endOffset="3034"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-test-manifest"
+            robot="true">
+            <fix-replace
+                description="Replace with androidx-compose-ui-ui-test-manifest = { module = &quot;androidx.compose.ui:ui-test-manifest&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="androidx-compose-ui-ui-test-manifest = { module = &quot;androidx.compose.ui:ui-test-manifest&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+                    startOffset="236"
+                    endOffset="236"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.androidx.compose.ui.ui.test.manifest"
+                robot="true"
+                replacement="libs.androidx.compose.ui.ui.test.manifest"
+                priority="0">
+                <range
+                    file="${:attackapp*projectDir}/build.gradle.kts"
+                    startOffset="3060"
+                    endOffset="3098"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="102"
+            column="25"
+            startOffset="3060"
+            endLine="102"
+            endColumn="63"
+            endOffset="3098"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0">
+        <fix-replace
+            description="Change to 1.16.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.16.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="15"
+            column="77"
+            startOffset="312"
+            endLine="15"
+            endColumn="85"
+            endOffset="320"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.2">
+        <fix-replace
+            description="Change to 2.9.2"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.9.2"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="6"
+            column="13"
+            startOffset="109"
+            endLine="6"
+            endColumn="20"
+            endOffset="116"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1">
+        <fix-replace
+            description="Change to 1.10.1"
+            family="Update versions"
+            oldString="1.8.2"
+            replacement="1.10.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="5"
+            column="20"
+            startOffset="89"
+            endLine="5"
+            endColumn="27"
+            endOffset="96"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1">
+        <fix-replace
+            description="Change to 1.7.1"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="18"
+            column="84"
+            startOffset="652"
+            endLine="18"
+            endColumn="91"
+            endOffset="659"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1">
+        <fix-replace
+            description="Change to 2.2.1"
+            family="Update versions"
+            oldString="2.1.4"
+            replacement="2.2.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="19"
+            column="105"
+            startOffset="766"
+            endLine="19"
+            endColumn="112"
+            endOffset="773"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.07.00">
+        <fix-replace
+            description="Change to 2025.07.00"
+            family="Update versions"
+            oldString="2024.02.00"
+            replacement="2025.07.00"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="4"
+            column="15"
+            startOffset="57"
+            endLine="4"
+            endColumn="27"
+            endOffset="69"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.9.2">
+        <fix-replace
+            description="Change to 2.9.2"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.9.2"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="6"
+            column="13"
+            startOffset="109"
+            endLine="6"
+            endColumn="20"
+            endOffset="116"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.navigation:navigation-compose than 2.7.6 is available: 2.9.2">
+        <fix-replace
+            description="Change to 2.9.2"
+            family="Update versions"
+            oldString="2.7.6"
+            replacement="2.9.2"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="7"
+            column="14"
+            startOffset="130"
+            endLine="7"
+            endColumn="21"
+            endOffset="137"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-serialization-json than 1.6.2 is available: 1.7.3">
+        <fix-replace
+            description="Change to 1.7.3"
+            family="Update versions"
+            oldString="1.6.2"
+            replacement="1.7.3"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="9"
+            column="17"
+            startOffset="169"
+            endLine="9"
+            endColumn="24"
+            endOffset="176"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.3 is available: 1.9.0">
+        <fix-replace
+            description="Change to 1.9.0"
+            family="Update versions"
+            oldString="1.7.3"
+            replacement="1.9.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="11"
+            column="14"
+            startOffset="205"
+            endLine="11"
+            endColumn="21"
+            endOffset="212"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.12.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="53"
+            column="82"
+            startOffset="2683"
+            endLine="53"
+            endColumn="90"
+            endOffset="2691"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1">
+        <fix-replace
+            description="Change to 1.2.1"
+            family="Update versions"
+            oldString="1.1.5"
+            replacement="1.2.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="57"
+            column="75"
+            startOffset="2843"
+            endLine="57"
+            endColumn="82"
+            endOffset="2850"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1">
+        <fix-replace
+            description="Change to 3.6.1"
+            family="Update versions"
+            oldString="3.5.1"
+            replacement="3.6.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="58"
+            column="96"
+            startOffset="2948"
+            endLine="58"
+            endColumn="103"
+            endOffset="2955"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.6.1 is available: 8.11.1">
+        <fix-replace
+            description="Change to 8.11.1"
+            family="Update versions"
+            oldString="8.6.1"
+            replacement="8.11.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="14"
+            endOffset="24"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.android than 2.0.20 is available: 2.0.21">
+        <fix-replace
+            description="Change to 2.0.21"
+            family="Update versions"
+            oldString="2.0.20"
+            replacement="2.0.21"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="3"
+            column="10"
+            startOffset="34"
+            endLine="3"
+            endColumn="18"
+            endOffset="42"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.20 is available: 2.0.21">
+        <fix-replace
+            description="Change to 2.0.21"
+            family="Update versions"
+            oldString="2.0.20"
+            replacement="2.0.21"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="3"
+            column="10"
+            startOffset="34"
+            endLine="3"
+            endColumn="18"
+            endOffset="42"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0">
+        <fix-replace
+            description="Change to 1.16.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.16.0"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="58"
+            column="20"
+            startOffset="1242"
+            endLine="58"
+            endColumn="51"
+            endOffset="1273"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.2">
+        <fix-replace
+            description="Change to 2.9.2"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.9.2"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="59"
+            column="20"
+            startOffset="1294"
+            endLine="59"
+            endColumn="68"
+            endOffset="1342"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1">
+        <fix-replace
+            description="Change to 1.7.1"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.1"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="60"
+            column="20"
+            startOffset="1363"
+            endLine="60"
+            endColumn="56"
+            endOffset="1399"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.12.0"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="61"
+            column="20"
+            startOffset="1420"
+            endLine="61"
+            endColumn="65"
+            endOffset="1465"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.07.00">
+        <fix-replace
+            description="Change to 2025.07.00"
+            family="Update versions"
+            oldString="2024.02.00"
+            replacement="2025.07.00"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="64"
+            column="20"
+            startOffset="1506"
+            endLine="64"
+            endColumn="71"
+            endOffset="1557"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1">
+        <fix-replace
+            description="Change to 1.10.1"
+            family="Update versions"
+            oldString="1.8.2"
+            replacement="1.10.1"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="69"
+            column="20"
+            startOffset="1797"
+            endLine="69"
+            endColumn="62"
+            endOffset="1839"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.9.2">
+        <fix-replace
+            description="Change to 2.9.2"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.9.2"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="72"
+            column="20"
+            startOffset="1878"
+            endLine="72"
+            endColumn="74"
+            endOffset="1932"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.navigation:navigation-compose than 2.7.6 is available: 2.9.2">
+        <fix-replace
+            description="Change to 2.9.2"
+            family="Update versions"
+            oldString="2.7.6"
+            replacement="2.9.2"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="75"
+            column="20"
+            startOffset="1972"
+            endLine="75"
+            endColumn="66"
+            endOffset="2018"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-serialization-json than 1.6.2 is available: 1.7.3">
+        <fix-replace
+            description="Change to 1.7.3"
+            family="Update versions"
+            oldString="1.6.2"
+            replacement="1.7.3"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="84"
+            column="20"
+            startOffset="2325"
+            endLine="84"
+            endColumn="76"
+            endOffset="2381"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.3 is available: 1.9.0">
+        <fix-replace
+            description="Change to 1.9.0"
+            family="Update versions"
+            oldString="1.7.3"
+            replacement="1.9.0"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="93"
+            column="20"
+            startOffset="2569"
+            endLine="93"
+            endColumn="76"
+            endOffset="2625"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1">
+        <fix-replace
+            description="Change to 1.2.1"
+            family="Update versions"
+            oldString="1.1.5"
+            replacement="1.2.1"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="97"
+            column="31"
+            startOffset="2718"
+            endLine="97"
+            endColumn="62"
+            endOffset="2749"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1">
+        <fix-replace
+            description="Change to 3.6.1"
+            family="Update versions"
+            oldString="3.5.1"
+            replacement="3.6.1"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="98"
+            column="31"
+            startOffset="2781"
+            endLine="98"
+            endColumn="75"
+            endOffset="2825"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.07.00">
+        <fix-replace
+            description="Change to 2025.07.00"
+            family="Update versions"
+            oldString="2024.02.00"
+            replacement="2025.07.00"
+            priority="0"/>
+        <location
+            file="${:attackapp*projectDir}/build.gradle.kts"
+            line="99"
+            column="31"
+            startOffset="2857"
+            endLine="99"
+            endColumn="82"
+            endOffset="2908"/>
     </incident>
 
 </incidents>

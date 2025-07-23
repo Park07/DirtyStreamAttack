@@ -45,8 +45,8 @@
 29-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:13:9-43
 30        <activity
 30-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:16:9-25:20
-31            android:name="com.artexplorer.com.artexplorer.museum.MuseumActivity"
-31-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:17:13-81
+31            android:name="com.artexplorer.museum.MuseumActivity"
+31-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:17:13-65
 32            android:exported="true"
 32-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:18:13-36
 33            android:screenOrientation="portrait"
@@ -68,10 +68,10 @@
 42        <!-- Disguised content provider - looks like innocent artwork sharing -->
 43        <provider
 43-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:28:9-34:41
-44            android:name="com.artexplorer.com.artexplorer.museum.data.ArtworkContentProvider"
-44-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:29:13-94
-45            android:authorities="com.artexplorer.museum.artworks"
-45-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:30:13-66
+44            android:name="com.artexplorer.museum.data.ArtworkContentProvider"
+44-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:29:13-78
+45            android:authorities="com.artexplorer.artexplorer.artworks"
+45-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:30:13-71
 46            android:enabled="true"
 46-->/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:31:13-35
 47            android:exported="true"

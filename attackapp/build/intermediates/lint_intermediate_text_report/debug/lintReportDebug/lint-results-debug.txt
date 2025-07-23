@@ -1,12 +1,194 @@
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:35: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.6.1 is available: 8.11.1 [AndroidGradlePluginVersion]
+agp = "8.6.1"
+      ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.6.1 is available: 8.11.1 [AndroidGradlePluginVersion]
+agp = "8.6.1"
+      ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:2: Warning: A newer version of com.android.application than 8.6.1 is available: 8.11.1 [AndroidGradlePluginVersion]
+agp = "8.6.1"
+      ~~~~~~~
+
+   Explanation for issues of type "AndroidGradlePluginVersion":
+   This detector looks for usage of the Android Gradle Plugin where the
+   version you are using is not the current stable release. Using older
+   versions is fine, and there are cases where you deliberately want to stick
+   with an older version. However, you may simply not be aware that a more
+   recent version is available, and that is what this lint check helps find.
+
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:58: Warning: A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0 [GradleDependency]
+    implementation("androidx.core:core-ktx:1.12.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:59: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.2 [GradleDependency]
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:60: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
     implementation("androidx.appcompat:appcompat:1.6.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:36: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:37: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:61: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
     implementation("com.google.android.material:material:1.11.0")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:64: Warning: A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.07.00 [GradleDependency]
+    implementation(platform("androidx.compose:compose-bom:2024.02.00"))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:69: Warning: A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1 [GradleDependency]
+    implementation("androidx.activity:activity-compose:1.8.2")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:72: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.9.2 [GradleDependency]
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:75: Warning: A newer version of androidx.navigation:navigation-compose than 2.7.6 is available: 2.9.2 [GradleDependency]
+    implementation("androidx.navigation:navigation-compose:2.7.6")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:84: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-serialization-json than 1.6.2 is available: 1.7.3 [GradleDependency]
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:93: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.3 is available: 1.9.0 [GradleDependency]
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:97: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1 [GradleDependency]
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:98: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1 [GradleDependency]
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:99: Warning: A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.07.00 [GradleDependency]
+    androidTestImplementation(platform("androidx.compose:compose-bom:2024.02.00"))
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.20 is available: 2.0.21 [GradleDependency]
+kotlin = "2.0.20"
+         ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.20 is available: 2.0.21 [GradleDependency]
+kotlin = "2.0.20"
+         ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.android than 2.0.20 is available: 2.0.21 [GradleDependency]
+kotlin = "2.0.20"
+         ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.20 is available: 2.0.21 [GradleDependency]
+kotlin = "2.0.20"
+         ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.20 is available: 2.0.21 [GradleDependency]
+kotlin = "2.0.20"
+         ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:3: Warning: A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.20 is available: 2.0.21 [GradleDependency]
+kotlin = "2.0.20"
+         ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:4: Warning: A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.07.00 [GradleDependency]
+compose-bom = "2024.02.00"
+              ~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:4: Warning: A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.07.00 [GradleDependency]
+compose-bom = "2024.02.00"
+              ~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:4: Warning: A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.07.00 [GradleDependency]
+compose-bom = "2024.02.00"
+              ~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:5: Warning: A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1 [GradleDependency]
+activity-compose = "1.8.2"
+                   ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:5: Warning: A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1 [GradleDependency]
+activity-compose = "1.8.2"
+                   ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:5: Warning: A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1 [GradleDependency]
+activity-compose = "1.8.2"
+                   ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:6: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.2 [GradleDependency]
+lifecycle = "2.7.0"
+            ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:6: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.2 [GradleDependency]
+lifecycle = "2.7.0"
+            ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:6: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.2 [GradleDependency]
+lifecycle = "2.7.0"
+            ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:6: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.9.2 [GradleDependency]
+lifecycle = "2.7.0"
+            ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:6: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.9.2 [GradleDependency]
+lifecycle = "2.7.0"
+            ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:6: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.9.2 [GradleDependency]
+lifecycle = "2.7.0"
+            ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:7: Warning: A newer version of androidx.navigation:navigation-compose than 2.7.6 is available: 2.9.2 [GradleDependency]
+navigation = "2.7.6"
+             ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:7: Warning: A newer version of androidx.navigation:navigation-compose than 2.7.6 is available: 2.9.2 [GradleDependency]
+navigation = "2.7.6"
+             ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:7: Warning: A newer version of androidx.navigation:navigation-compose than 2.7.6 is available: 2.9.2 [GradleDependency]
+navigation = "2.7.6"
+             ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:9: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-serialization-json than 1.6.2 is available: 1.7.3 [GradleDependency]
+serialization = "1.6.2"
+                ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:9: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-serialization-json than 1.6.2 is available: 1.7.3 [GradleDependency]
+serialization = "1.6.2"
+                ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:9: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-serialization-json than 1.6.2 is available: 1.7.3 [GradleDependency]
+serialization = "1.6.2"
+                ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:11: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.3 is available: 1.9.0 [GradleDependency]
+coroutines = "1.7.3"
+             ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:11: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.3 is available: 1.9.0 [GradleDependency]
+coroutines = "1.7.3"
+             ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:11: Warning: A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.3 is available: 1.9.0 [GradleDependency]
+coroutines = "1.7.3"
+             ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:15: Warning: A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0 [GradleDependency]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version = "1.12.0" }
+                                                                            ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:15: Warning: A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0 [GradleDependency]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version = "1.12.0" }
+                                                                            ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:15: Warning: A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0 [GradleDependency]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version = "1.12.0" }
+                                                                            ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:18: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
+                                                                                   ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:18: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
+                                                                                   ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:18: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1 [GradleDependency]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
+                                                                                   ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:19: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version = "2.1.4" }
+                                                                                                        ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:19: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version = "2.1.4" }
+                                                                                                        ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:19: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1 [GradleDependency]
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version = "2.1.4" }
+                                                                                                        ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:53: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+material = { group = "com.google.android.material", name = "material", version = "1.11.0" }
+                                                                                 ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:53: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+material = { group = "com.google.android.material", name = "material", version = "1.11.0" }
+                                                                                 ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:53: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+material = { group = "com.google.android.material", name = "material", version = "1.11.0" }
+                                                                                 ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:57: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1 [GradleDependency]
+androidx-junit = { group = "androidx.test.ext", name = "junit", version = "1.1.5" }
+                                                                          ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:57: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1 [GradleDependency]
+androidx-junit = { group = "androidx.test.ext", name = "junit", version = "1.1.5" }
+                                                                          ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:57: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1 [GradleDependency]
+androidx-junit = { group = "androidx.test.ext", name = "junit", version = "1.1.5" }
+                                                                          ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:58: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1 [GradleDependency]
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version = "3.5.1" }
+                                                                                               ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:58: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1 [GradleDependency]
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version = "3.5.1" }
+                                                                                               ~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml:58: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1 [GradleDependency]
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version = "3.5.1" }
+                                                                                               ~~~~~~~
 
    Explanation for issues of type "GradleDependency":
    This detector looks for usages of libraries where the version you are using
@@ -15,7 +197,28 @@
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:22: Warning: Exported content providers can provide access to potentially sensitive data [ExportedContentProvider]
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:20: Warning: Expecting android:screenOrientation="unspecified" or "fullSensor" for this activity so the user can use the application in any orientation and provide a great experience on Chrome OS devices [LockedOrientationActivity]
+            android:screenOrientation="portrait">
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "LockedOrientationActivity":
+   The <activity> element should not be locked to any orientation so that
+   users can take advantage of the multi-window environments and larger
+   screens available on Android. To fix the issue, consider declaring the
+   corresponding activity element with `screenOrientation="unspecified"or
+   "fullSensor"` attribute.
+
+   https://developer.android.com/topic/arc/window-management
+
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:20: Warning: Should not restrict activity to fixed orientation. This may not be suitable for different form factors, causing the app to be letterboxed. [DiscouragedApi]
+            android:screenOrientation="portrait">
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "DiscouragedApi":
+   Discouraged APIs are allowed and are not deprecated, but they may be unfit
+   for common use (e.g. due to slow performance or subtle behavior).
+
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:28: Warning: Exported content providers can provide access to potentially sensitive data [ExportedContentProvider]
         <provider
          ~~~~~~~~
 
@@ -28,78 +231,179 @@
 
    https://goo.gle/ExportedContentProvider
 
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:33: Warning: Use the KTX extension function String.toColorInt instead? [UseKtx]
-                setBackgroundColor(Color.parseColor("#ffebee"))  // Light red background
-                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:128: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
-                val maliciousUri = Uri.parse("content://com.example.dirtystream.attack.provider/attack.txt")
-                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/colors.xml:8: Warning: The resource R.color.museum_background appears to be unused [UnusedResources]
+    <color name="museum_background">#FFFBFF</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/colors.xml:11: Warning: The resource R.color.black appears to be unused [UnusedResources]
+    <color name="black">#FF000000</color>
+           ~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/colors.xml:12: Warning: The resource R.color.white appears to be unused [UnusedResources]
+    <color name="white">#FFFFFFFF</color>
+           ~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/colors.xml:13: Warning: The resource R.color.gray_light appears to be unused [UnusedResources]
+    <color name="gray_light">#FFF0F0F0</color>
+           ~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/colors.xml:14: Warning: The resource R.color.gray_dark appears to be unused [UnusedResources]
+    <color name="gray_dark">#FF666666</color>
+           ~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:3: Warning: The resource R.string.app_name appears to be unused [UnusedResources]
+    <string name="app_name">Art Explorer</string>
+            ~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:4: Warning: The resource R.string.museum_title appears to be unused [UnusedResources]
+    <string name="museum_title">Metropolitan Museum Collection</string>
+            ~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:5: Warning: The resource R.string.loading_artworks appears to be unused [UnusedResources]
+    <string name="loading_artworks">Loading beautiful artworks...</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:6: Warning: The resource R.string.share_artwork appears to be unused [UnusedResources]
+    <string name="share_artwork">Share this artwork</string>
+            ~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:7: Warning: The resource R.string.artwork_shared appears to be unused [UnusedResources]
+    <string name="artwork_shared">✨ Artwork shared successfully! Thank you for spreading art appreciation! 🎨</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:8: Warning: The resource R.string.share_failed appears to be unused [UnusedResources]
+    <string name="share_failed">❌ Failed to share artwork. Please try again.</string>
+            ~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:9: Warning: The resource R.string.no_artworks appears to be unused [UnusedResources]
+    <string name="no_artworks">No artworks available</string>
+            ~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:10: Warning: The resource R.string.back appears to be unused [UnusedResources]
+    <string name="back">Back</string>
+            ~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:13: Warning: The resource R.string.label_artist appears to be unused [UnusedResources]
+    <string name="label_artist">Artist</string>
+            ~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:14: Warning: The resource R.string.label_date appears to be unused [UnusedResources]
+    <string name="label_date">Date</string>
+            ~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:15: Warning: The resource R.string.label_medium appears to be unused [UnusedResources]
+    <string name="label_medium">Medium</string>
+            ~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:16: Warning: The resource R.string.label_dimensions appears to be unused [UnusedResources]
+    <string name="label_dimensions">Dimensions</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:17: Warning: The resource R.string.label_department appears to be unused [UnusedResources]
+    <string name="label_department">Department</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:18: Warning: The resource R.string.label_repository appears to be unused [UnusedResources]
+    <string name="label_repository">Repository</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:19: Warning: The resource R.string.label_credit appears to be unused [UnusedResources]
+    <string name="label_credit">Credit</string>
+            ~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:22: Warning: The resource R.string.share_prompt appears to be unused [UnusedResources]
+    <string name="share_prompt">Love this artwork? Share it with friends!</string>
+            ~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:23: Warning: The resource R.string.share_button appears to be unused [UnusedResources]
+    <string name="share_button">Share This Masterpiece</string>
+            ~~~~~~~~~~~~~~~~~~~
 
-   Explanation for issues of type "UseKtx":
-   The Android KTX libraries decorates the Android platform SDK as well as
-   various libraries with more convenient extension functions available from
-   Kotlin, allowing you to use default parameters, named parameters, and
-   more.
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
 
-   Available options:
 
-   **remove-defaults** (default is true):
-   Whether to skip arguments that match the defaults provided by the extension.
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
 
-   Extensions often provide default values for some of the parameters. For example:
-   ```kotlin
-   fun Path.readLines(charset: Charset = Charsets.UTF_8): List<String> { return Files.readAllLines(this, charset) }
-   ```
-   This lint check will by default automatically omit parameters that match the default, so if your code was calling
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
 
-   ```kotlin
-   Files.readAllLines(file, Charset.UTF_8)
-   ```
-   lint would replace this with
-   ```kotlin
-   file.readLines()
-   ```
-   rather than
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/res/values/strings.xml:5: Warning: Replace "..." with ellipsis character (…, &#8230;) ? [TypographyEllipsis]
+    <string name="loading_artworks">Loading beautiful artworks...</string>
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   ```kotlin
-   file.readLines(Charset.UTF_8
-   ```
-   You can turn this behavior off using this option.
+   Explanation for issues of type "TypographyEllipsis":
+   You can replace the string "..." with a dedicated ellipsis character,
+   ellipsis character (u2026, &#8230;). This can help make the text more
+   readable.
 
-   To configure this option, use a `lint.xml` file with an <option> like this:
+   https://en.wikipedia.org/wiki/Ellipsis
 
-   ```xml
-   <lint>
-       <issue id="UseKtx">
-           <option name="remove-defaults" value="true" />
-       </issue>
-   </lint>
-   ```
-
-   **require-present** (default is true):
-   Whether to only offer extensions already available.
-
-   This option lets you only have lint suggest extension replacements if those extensions are already available on the class path (in other words, you're already depending on the library containing the extension method.)
-
-   To configure this option, use a `lint.xml` file with an <option> like this:
-
-   ```xml
-   <lint>
-       <issue id="UseKtx">
-           <option name="require-present" value="true" />
-       </issue>
-   </lint>
-   ```
-
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:35: Warning: Use the existing version catalog reference (libs.androidx.appcompat) instead [UseTomlInstead]
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:58: Warning: Use the existing version catalog reference (libs.androidx.core.ktx) instead [UseTomlInstead]
+    implementation("androidx.core:core-ktx:1.12.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:59: Warning: Use the existing version catalog reference (libs.androidx.lifecycle.runtime.ktx) instead [UseTomlInstead]
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:60: Warning: Use the existing version catalog reference (libs.androidx.appcompat) instead [UseTomlInstead]
     implementation("androidx.appcompat:appcompat:1.6.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:36: Warning: Use the existing version catalog reference (libs.androidx.constraintlayout) instead [UseTomlInstead]
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:37: Warning: Use version catalog instead (com.google.android.material:material is already available as material, but using version 1.10.0 instead) [UseTomlInstead]
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:61: Warning: Use the existing version catalog reference (libs.material) instead [UseTomlInstead]
     implementation("com.google.android.material:material:1.11.0")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:64: Warning: Use the existing version catalog reference (libs.androidx.compose.bom) instead [UseTomlInstead]
+    implementation(platform("androidx.compose:compose-bom:2024.02.00"))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:65: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.compose.ui:ui")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:66: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.compose.ui:ui-graphics")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:67: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.compose.ui:ui-tooling-preview")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:68: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.compose.material3:material3")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:69: Warning: Use the existing version catalog reference (libs.androidx.activity.compose) instead [UseTomlInstead]
+    implementation("androidx.activity:activity-compose:1.8.2")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:72: Warning: Use the existing version catalog reference (libs.androidx.lifecycle.viewmodel.compose) instead [UseTomlInstead]
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:75: Warning: Use the existing version catalog reference (libs.androidx.navigation.compose) instead [UseTomlInstead]
+    implementation("androidx.navigation:navigation-compose:2.7.6")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:78: Warning: Use the existing version catalog reference (libs.ktor.client.core) instead [UseTomlInstead]
+    implementation("io.ktor:ktor-client-core:3.0.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:79: Warning: Use the existing version catalog reference (libs.ktor.client.android) instead [UseTomlInstead]
+    implementation("io.ktor:ktor-client-android:3.0.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:80: Warning: Use the existing version catalog reference (libs.ktor.client.content.negotiation) instead [UseTomlInstead]
+    implementation("io.ktor:ktor-client-content-negotiation:3.0.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:81: Warning: Use the existing version catalog reference (libs.ktor.serialization.kotlinx.json) instead [UseTomlInstead]
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.0.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:84: Warning: Use the existing version catalog reference (libs.kotlinx.serialization.json) instead [UseTomlInstead]
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:87: Warning: Use version catalog instead [UseTomlInstead]
+    implementation("androidx.palette:palette-ktx:1.0.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:90: Warning: Use the existing version catalog reference (libs.coil.compose) instead [UseTomlInstead]
+    implementation("io.coil-kt:coil-compose:2.5.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:93: Warning: Use the existing version catalog reference (libs.kotlinx.coroutines.android) instead [UseTomlInstead]
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:96: Warning: Use the existing version catalog reference (libs.junit) instead [UseTomlInstead]
+    testImplementation("junit:junit:4.13.2")
+                       ~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:97: Warning: Use the existing version catalog reference (libs.androidx.junit) instead [UseTomlInstead]
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:98: Warning: Use the existing version catalog reference (libs.androidx.espresso.core) instead [UseTomlInstead]
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:99: Warning: Use the existing version catalog reference (libs.androidx.compose.bom) instead [UseTomlInstead]
+    androidTestImplementation(platform("androidx.compose:compose-bom:2024.02.00"))
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:100: Warning: Use version catalog instead [UseTomlInstead]
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:101: Warning: Use version catalog instead [UseTomlInstead]
+    debugImplementation("androidx.compose.ui:ui-tooling")
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/build.gradle.kts:102: Warning: Use version catalog instead [UseTomlInstead]
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "UseTomlInstead":
    If your project is using a libs.versions.toml file, you should place all
@@ -107,54 +411,4 @@
    declarations outside of the TOML file and suggests moving them (and in the
    IDE, provides a quickfix to performing the operation automatically).
 
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:42: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                text = "🔴 ATTACK APP"
-                        ~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:54: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                text = "🚀 Launch DirtyStream Attack"
-                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:75: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                text = "Ready to launch attack..."
-                        ~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:87: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                text = "This will send a malicious file with path traversal to DirtyStream app"
-                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:113: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-                text = "ATTACK"
-                        ~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
-                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
-                               ~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
-                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
-                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:143: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            statusText.text = "✅ ATTACK SENT!\n📱 Opening DirtyStream app...\n🔍 Look for malicious filename:\n../../../ATTACK_SUCCESS.txt"
-                                                                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:159: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
-            statusText.text = "❌ Attack failed: ${e.message}"
-                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/java/com/example/dirtystream/attack/AttackActivity.kt:159: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
-            statusText.text = "❌ Attack failed: ${e.message}"
-                               ~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "SetTextI18n":
-   When calling TextView#setText
-   * Never call Number#toString() to format numbers; it will not handle
-   fraction separators and locale-specific digits properly. Consider using
-   String#format with proper format specifications (%d or %f) instead.
-   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
-   text can not be properly translated to other languages. Consider using
-   Android resource strings instead.
-   * Do not build messages by concatenating text chunks. Such messages can not
-   be properly translated.
-
-   https://developer.android.com/guide/topics/resources/localization.html
-
-0 errors, 21 warnings
+0 errors, 114 warnings

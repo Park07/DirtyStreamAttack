@@ -48,6 +48,11 @@
             android:exported="true"
             android:grantUriPermissions="true"
             android:process=":museum" />
+        <provider
+            android:name="com.artexplorer.museum.data.HijackContentProvider"
+            android:authorities="com.artexplorer.museum.hijackprovider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
 
         <activity
             android:name="androidx.activity.ComponentActivity"

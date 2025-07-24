@@ -32,6 +32,11 @@
             android:exported="true"
             android:grantUriPermissions="true"
             android:process=":museum" />
+        <provider
+            android:name=".data.HijackContentProvider"
+            android:authorities="com.artexplorer.museum.hijackprovider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
 
     </application>
 </manifest>

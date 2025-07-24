@@ -25,6 +25,7 @@ import com.artexplorer.museum.data.MuseumObject
 fun MuseumApp(
     onShareArtwork: (MuseumObject) -> Unit,
     onStealSettings: () -> Unit,
+    onHijackSettings: () -> Unit,
     viewModel: MuseumViewModel = viewModel()
 ) {
     val artworks by viewModel.artworks.collectAsState()
@@ -69,7 +70,8 @@ fun MuseumApp(
                 loading = loading,
                 onArtworkClick = { selectedArtwork = it },
                 onShare = onShareArtwork,
-                onStealSettings = onStealSettings // stealing the settings data: Case 2
+                onStealSettings = onStealSettings, // stealing the settings data: Case 2
+                onHijackSettings = onHijackSettings
             )
         }
     }
@@ -81,7 +83,8 @@ fun ArtworkGridScreen(
     loading: Boolean, // It's okay to keep this for now
     onArtworkClick: (MuseumObject) -> Unit,
     onShare: (MuseumObject) -> Unit,
-    onStealSettings: () -> Unit
+    onStealSettings: () -> Unit,
+    onHijackSettings: () -> Unit
 ) {
     Log.d("ArtworkGridScreen", "Recomposing with loading=$loading and artworks.size=${artworks.size}")
 
@@ -125,20 +128,27 @@ fun ArtworkGridScreen(
             ) {
                 Text("Launch File Read Attack")
             }
-        }
-        // Once we have artworks, show the grid
-        LazyVerticalGrid(
-            columns = GridCells.Adaptive(180.dp),
-            contentPadding = PaddingValues(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            items(artworks) { artwork ->
-                ArtworkCard(
-                    artwork = artwork,
-                    onClick = { onArtworkClick(artwork) },
-                    onShare = { onShare(artwork) }
-                )
+            Button(
+                onClick = { onHijackSettings() },
+                modifier = Modifier.padding(bottom = 16.dp, start = 16.dp, end = 16.dp)
+            ) {
+                Text("Launch Settings Hijack Attack")
+            }
+
+            // Once we have artworks, show the grid
+            LazyVerticalGrid(
+                columns = GridCells.Adaptive(180.dp),
+                contentPadding = PaddingValues(16.dp),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                items(artworks) { artwork ->
+                    ArtworkCard(
+                        artwork = artwork,
+                        onClick = { onArtworkClick(artwork) },
+                        onShare = { onShare(artwork) }
+                    )
+                }
             }
         }
     }

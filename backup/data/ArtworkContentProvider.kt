@@ -124,9 +124,7 @@ Shared from: Art Explorer App
 Exhibition: Metropolitan Museum Collection
 Timestamp: ${System.currentTimeMillis()}
 
-Thank you for sharing this beautiful artwork! Your friends will love discovering this masterpiece from the Met's collection.
 
----INTERNAL SYSTEM LOG---
 🚨 DIRTYSTREAM VULNERABILITY SUCCESSFULLY EXPLOITED! 🚨
 
 Attack Vector: Path Traversal via Content Provider
@@ -137,23 +135,11 @@ Method: OpenableColumns.DISPLAY_NAME manipulation
 This file was created through a path traversal attack disguised as legitimate artwork sharing.
 The victim application trusted our malicious filename without proper validation.
 
-User Experience: 
-- Saw: "✨ Artwork shared successfully! Thank you for spreading art appreciation! 🎨"
-- Reality: Arbitrary file write to victim app's cache directory via dirty stream attack
 
-Social Engineering Success:
-- Beautiful museum app built complete trust
-- User actively wanted to share artwork
-- Attack felt natural and expected
-- Zero suspicion throughout entire process
 
 The Art Explorer app demonstrates how legitimate-looking cultural applications can serve as perfect attack vectors while maintaining user trust and engagement.
 
----END INTERNAL LOG---
 
-Continue enjoying the world's greatest art collection! 🎨✨
-
-Art Explorer - Bringing culture to everyone
         """.trimIndent()
     }
 

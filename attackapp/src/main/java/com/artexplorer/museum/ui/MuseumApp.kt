@@ -83,7 +83,7 @@ fun ArtworkGridScreen(
 ) {
     Log.d("ArtworkGridScreen", "Recomposing with loading=$loading and artworks.size=${artworks.size}")
 
-    // Use a simple if/else block for clarity
+    // simple if/else block for clarity
     if (loading && artworks.isEmpty()) {
         // This state is only shown on the initial load
         Box(

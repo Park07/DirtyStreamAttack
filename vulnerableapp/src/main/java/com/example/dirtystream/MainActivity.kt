@@ -1,7 +1,5 @@
 package com.example.dirtystream
 
-// ADD THESE MISSING COMPOSE IMPORTS:
-
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -51,7 +49,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // logging statement
+        // logging
         Log.d("DirtyStream", "Initialising default settings file.");
         val sharedPref = getSharedPreferences("com.example.dirtystream_preferences", MODE_PRIVATE)
         val editor = sharedPref.edit()
@@ -60,7 +58,7 @@ class MainActivity : ComponentActivity() {
             editor.apply()
         }
 
-        // STEP 3: Handle files sent from other apps (THE ATTACK VECTOR!)
+        // STEP 3: Handle files sent from other apps - THE ATTACK VECTOR!
         handleIncomingIntent(intent)
 
         setContent {
@@ -98,8 +96,6 @@ class MainActivity : ComponentActivity() {
 
     // STEP 6: Process the file - THIS IS WHERE THE VULNERABILITY IS!
 
-    // In vulnerableapp's MainActivity.kt
-
     private fun handleIncomingFile(uri: Uri) {
         try {
             val fileName = getFileName(uri)
@@ -110,7 +106,6 @@ class MainActivity : ComponentActivity() {
                 return
             }
 
-
             // 1. Resolve the canonical path to remove all '../'
             val tempFile = File(filesDir, fileName)
             val canonicalPath = tempFile.canonicalPath
@@ -120,15 +115,14 @@ class MainActivity : ComponentActivity() {
 
             // 2. Check if the target is on external storage
             if (canonicalPath.startsWith("/storage/emulated/0")) {
-                // 3. THE FIX: If it's external, use the correct API to get the app's
-                //    designated directory. This is guaranteed to be writable.
+
                 val externalDir = getExternalFilesDir(null)
                 if (externalDir != null) {
                     // Re-create the File object based on this valid, writable directory
                     val finalExternalFile = File(externalDir.absolutePath, outputFile.name)
                     Log.d("DirtyStream", "Writing to guaranteed external path: ${finalExternalFile.path}")
 
-                    // Now copy the file to the correct location
+                    // copy the file to the correct location
                     contentResolver.openInputStream(uri)?.use { inputStream ->
                         FileOutputStream(finalExternalFile).use { outputStream ->
                             inputStream.copyTo(outputStream)
@@ -138,7 +132,7 @@ class MainActivity : ComponentActivity() {
                     Log.e("DirtyStream", "Could not get external files directory.")
                 }
             } else {
-                // 4. If it's internal storage, the old logic works fine.
+                // 4. If it's internal storage, parent directory
                 val parentDir = outputFile.parentFile
                 if (parentDir != null && !parentDir.exists()) {
                     parentDir.mkdirs()
@@ -149,7 +143,6 @@ class MainActivity : ComponentActivity() {
                     }
                 }
             }
-            // --- END OF FIX ---
 
             statusMessage = "✅ Content saved: $fileName"
             Toast.makeText(this, "Content saved to: ${outputFile.absolutePath}", Toast.LENGTH_LONG).show()
@@ -160,7 +153,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    // STEP 7: Extract filename from URI (this is where attackers can manipulate!)
+    // STEP 7: Extract filename from URI: attackers can manipulate here
     private fun getFileName(uri: Uri): String? {
         var fileName: String? = null
 

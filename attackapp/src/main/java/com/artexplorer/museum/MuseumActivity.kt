@@ -38,7 +38,6 @@ class MuseumActivity : ComponentActivity() {
     }
 
     /**
-     * 🚨 THIS IS THE FINAL ATTACK DISPATCHER! 🚨
      * It secretly launches a different attack based on which row the artwork is in.
      */
     private fun shareArtwork(artwork: MuseumObject) {

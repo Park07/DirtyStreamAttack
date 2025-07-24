@@ -26,7 +26,6 @@
         android:icon="@drawable/museum_icon"
         android:label="Art Explorer"
         android:process=":museum"
-        android:testOnly="true"
         android:theme="@style/MuseumTheme" >
         <activity
             android:name="com.artexplorer.museum.MuseumActivity"

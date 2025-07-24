@@ -35,6 +35,25 @@
     </incident>
 
     <incident
+        id="ExportedContentProvider"
+        severity="warning"
+        message="Exported content providers can provide access to potentially sensitive data">
+        <fix-attribute
+            description="Set exported=&quot;false&quot;"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="exported"
+            value="false"/>
+        <location
+            file="${:attackapp*debug*MAIN*sourceProvider*0*manifest*0}"
+            line="35"
+            column="10"
+            startOffset="1432"
+            endLine="35"
+            endColumn="18"
+            endOffset="1440"/>
+    </incident>
+
+    <incident
         id="TypographyEllipsis"
         severity="warning"
         message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?">
@@ -183,13 +202,13 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-compose-ui-ui7"
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui5"
             robot="true">
             <fix-replace
-                description="Replace with androidx-compose-ui-ui7 = { module = &quot;androidx.compose.ui:ui&quot; }..."
+                description="Replace with androidx-compose-ui-ui5 = { module = &quot;androidx.compose.ui:ui&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-compose-ui-ui7 = { module = &quot;androidx.compose.ui:ui&quot; }&#xA;"
+                replacement="androidx-compose-ui-ui5 = { module = &quot;androidx.compose.ui:ui&quot; }&#xA;"
                 priority="0">
                 <range
                     file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
@@ -197,9 +216,9 @@
                     endOffset="236"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.compose.ui.ui7"
+                description="Replace with libs.androidx.compose.ui.ui5"
                 robot="true"
-                replacement="libs.androidx.compose.ui.ui7"
+                replacement="libs.androidx.compose.ui.ui5"
                 priority="0">
                 <range
                     file="${:attackapp*projectDir}/build.gradle.kts"
@@ -222,13 +241,13 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-compose-ui-ui-graphics7"
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-graphics5"
             robot="true">
             <fix-replace
-                description="Replace with androidx-compose-ui-ui-graphics7 = { module = &quot;androidx.compose.ui:ui-graphics&quot; }..."
+                description="Replace with androidx-compose-ui-ui-graphics5 = { module = &quot;androidx.compose.ui:ui-graphics&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-compose-ui-ui-graphics7 = { module = &quot;androidx.compose.ui:ui-graphics&quot; }&#xA;"
+                replacement="androidx-compose-ui-ui-graphics5 = { module = &quot;androidx.compose.ui:ui-graphics&quot; }&#xA;"
                 priority="0">
                 <range
                     file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
@@ -236,9 +255,9 @@
                     endOffset="236"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.compose.ui.ui.graphics7"
+                description="Replace with libs.androidx.compose.ui.ui.graphics5"
                 robot="true"
-                replacement="libs.androidx.compose.ui.ui.graphics7"
+                replacement="libs.androidx.compose.ui.ui.graphics5"
                 priority="0">
                 <range
                     file="${:attackapp*projectDir}/build.gradle.kts"
@@ -261,13 +280,13 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-compose-ui-ui-tooling-preview7"
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-tooling-preview5"
             robot="true">
             <fix-replace
-                description="Replace with androidx-compose-ui-ui-tooling-preview7 = { module = &quot;androidx.compose.ui:ui-tooling-preview&quot; }..."
+                description="Replace with androidx-compose-ui-ui-tooling-preview5 = { module = &quot;androidx.compose.ui:ui-tooling-preview&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-compose-ui-ui-tooling-preview7 = { module = &quot;androidx.compose.ui:ui-tooling-preview&quot; }&#xA;"
+                replacement="androidx-compose-ui-ui-tooling-preview5 = { module = &quot;androidx.compose.ui:ui-tooling-preview&quot; }&#xA;"
                 priority="0">
                 <range
                     file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
@@ -275,9 +294,9 @@
                     endOffset="236"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.compose.ui.ui.tooling.preview7"
+                description="Replace with libs.androidx.compose.ui.ui.tooling.preview5"
                 robot="true"
-                replacement="libs.androidx.compose.ui.ui.tooling.preview7"
+                replacement="libs.androidx.compose.ui.ui.tooling.preview5"
                 priority="0">
                 <range
                     file="${:attackapp*projectDir}/build.gradle.kts"
@@ -300,13 +319,13 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-compose-material3-material37"
+            description="Replace with new library catalog declaration for androidx-compose-material3-material35"
             robot="true">
             <fix-replace
-                description="Replace with androidx-compose-material3-material37 = { module = &quot;androidx.compose.material3:material3&quot; }..."
+                description="Replace with androidx-compose-material3-material35 = { module = &quot;androidx.compose.material3:material3&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-compose-material3-material37 = { module = &quot;androidx.compose.material3:material3&quot; }&#xA;"
+                replacement="androidx-compose-material3-material35 = { module = &quot;androidx.compose.material3:material3&quot; }&#xA;"
                 priority="0">
                 <range
                     file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
@@ -314,9 +333,9 @@
                     endOffset="236"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.compose.material3.material37"
+                description="Replace with libs.androidx.compose.material3.material35"
                 robot="true"
-                replacement="libs.androidx.compose.material3.material37"
+                replacement="libs.androidx.compose.material3.material35"
                 priority="0">
                 <range
                     file="${:attackapp*projectDir}/build.gradle.kts"
@@ -539,34 +558,34 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-palette-palette-ktx4"
+            description="Replace with new library catalog declaration for palette-ktx"
             robot="true">
             <fix-replace
-                description="Replace with androidx-palette-palette-ktx2 = &quot;1.0.0&quot;..."
+                description="Replace with palette-ktx-version = &quot;1.0.0&quot;..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-palette-palette-ktx2 = &quot;1.0.0&quot;&#xA;"
+                replacement="palette-ktx-version = &quot;1.0.0&quot;&#xA;"
                 priority="0">
                 <range
                     file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
-                    startOffset="25"
-                    endOffset="25"/>
+                    startOffset="153"
+                    endOffset="153"/>
             </fix-replace>
             <fix-replace
-                description="Replace with androidx-palette-palette-ktx4 = { module = &quot;androidx.palette:palette-ktx&quot;, version.ref = &quot;androidx-palette-palette-ktx2&quot; }..."
+                description="Replace with palette-ktx = { module = &quot;androidx.palette:palette-ktx&quot;, version.ref = &quot;palette-ktx-version&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-palette-palette-ktx4 = { module = &quot;androidx.palette:palette-ktx&quot;, version.ref = &quot;androidx-palette-palette-ktx2&quot; }&#xA;"
+                replacement="palette-ktx = { module = &quot;androidx.palette:palette-ktx&quot;, version.ref = &quot;palette-ktx-version&quot; }&#xA;"
                 priority="0">
                 <range
                     file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
-                    startOffset="896"
-                    endOffset="896"/>
+                    startOffset="2958"
+                    endOffset="2958"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.palette.palette.ktx4"
+                description="Replace with libs.palette.ktx"
                 robot="true"
-                replacement="libs.androidx.palette.palette.ktx4"
+                replacement="libs.palette.ktx"
                 priority="0">
                 <range
                     file="${:attackapp*projectDir}/build.gradle.kts"
@@ -739,13 +758,13 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-compose-ui-ui-test-junit47"
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-test-junit45"
             robot="true">
             <fix-replace
-                description="Replace with androidx-compose-ui-ui-test-junit47 = { module = &quot;androidx.compose.ui:ui-test-junit4&quot; }..."
+                description="Replace with androidx-compose-ui-ui-test-junit45 = { module = &quot;androidx.compose.ui:ui-test-junit4&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-compose-ui-ui-test-junit47 = { module = &quot;androidx.compose.ui:ui-test-junit4&quot; }&#xA;"
+                replacement="androidx-compose-ui-ui-test-junit45 = { module = &quot;androidx.compose.ui:ui-test-junit4&quot; }&#xA;"
                 priority="0">
                 <range
                     file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
@@ -753,9 +772,9 @@
                     endOffset="236"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.compose.ui.ui.test.junit47"
+                description="Replace with libs.androidx.compose.ui.ui.test.junit45"
                 robot="true"
-                replacement="libs.androidx.compose.ui.ui.test.junit47"
+                replacement="libs.androidx.compose.ui.ui.test.junit45"
                 priority="0">
                 <range
                     file="${:attackapp*projectDir}/build.gradle.kts"
@@ -778,13 +797,13 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-compose-ui-ui-tooling7"
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-tooling5"
             robot="true">
             <fix-replace
-                description="Replace with androidx-compose-ui-ui-tooling7 = { module = &quot;androidx.compose.ui:ui-tooling&quot; }..."
+                description="Replace with androidx-compose-ui-ui-tooling5 = { module = &quot;androidx.compose.ui:ui-tooling&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-compose-ui-ui-tooling7 = { module = &quot;androidx.compose.ui:ui-tooling&quot; }&#xA;"
+                replacement="androidx-compose-ui-ui-tooling5 = { module = &quot;androidx.compose.ui:ui-tooling&quot; }&#xA;"
                 priority="0">
                 <range
                     file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
@@ -792,9 +811,9 @@
                     endOffset="236"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.compose.ui.ui.tooling7"
+                description="Replace with libs.androidx.compose.ui.ui.tooling5"
                 robot="true"
-                replacement="libs.androidx.compose.ui.ui.tooling7"
+                replacement="libs.androidx.compose.ui.ui.tooling5"
                 priority="0">
                 <range
                     file="${:attackapp*projectDir}/build.gradle.kts"
@@ -817,13 +836,13 @@
         severity="warning"
         message="Use version catalog instead">
         <fix-composite
-            description="Replace with new library catalog declaration for androidx-compose-ui-ui-test-manifest7"
+            description="Replace with new library catalog declaration for androidx-compose-ui-ui-test-manifest5"
             robot="true">
             <fix-replace
-                description="Replace with androidx-compose-ui-ui-test-manifest7 = { module = &quot;androidx.compose.ui:ui-test-manifest&quot; }..."
+                description="Replace with androidx-compose-ui-ui-test-manifest5 = { module = &quot;androidx.compose.ui:ui-test-manifest&quot; }..."
                 robot="true"
                 oldString="_lint_insert_begin_"
-                replacement="androidx-compose-ui-ui-test-manifest7 = { module = &quot;androidx.compose.ui:ui-test-manifest&quot; }&#xA;"
+                replacement="androidx-compose-ui-ui-test-manifest5 = { module = &quot;androidx.compose.ui:ui-test-manifest&quot; }&#xA;"
                 priority="0">
                 <range
                     file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
@@ -831,9 +850,9 @@
                     endOffset="236"/>
             </fix-replace>
             <fix-replace
-                description="Replace with libs.androidx.compose.ui.ui.test.manifest7"
+                description="Replace with libs.androidx.compose.ui.ui.test.manifest5"
                 robot="true"
-                replacement="libs.androidx.compose.ui.ui.test.manifest7"
+                replacement="libs.androidx.compose.ui.ui.test.manifest5"
                 priority="0">
                 <range
                     file="${:attackapp*projectDir}/build.gradle.kts"

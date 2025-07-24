@@ -221,6 +221,9 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:28: Warning: Exported content providers can provide access to potentially sensitive data [ExportedContentProvider]
         <provider
          ~~~~~~~~
+/Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:35: Warning: Exported content providers can provide access to potentially sensitive data [ExportedContentProvider]
+        <provider
+         ~~~~~~~~
 
    Explanation for issues of type "ExportedContentProvider":
    Content providers are exported by default and any application on the system
@@ -411,4 +414,4 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
    declarations outside of the TOML file and suggests moving them (and in the
    IDE, provides a quickfix to performing the operation automatically).
 
-0 errors, 114 warnings
+0 errors, 115 warnings

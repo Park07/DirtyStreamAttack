@@ -24,8 +24,6 @@ import com.artexplorer.museum.data.MuseumObject
 @Composable
 fun MuseumApp(
     onShareArtwork: (MuseumObject) -> Unit,
-    onStealSettings: () -> Unit,
-    onHijackSettings: () -> Unit,
     viewModel: MuseumViewModel = viewModel()
 ) {
     val artworks by viewModel.artworks.collectAsState()
@@ -69,10 +67,9 @@ fun MuseumApp(
                 artworks = artworks,
                 loading = loading,
                 onArtworkClick = { selectedArtwork = it },
-                onShare = onShareArtwork,
-                onStealSettings = onStealSettings, // stealing the settings data: Case 2
-                onHijackSettings = onHijackSettings
+                onShare = onShareArtwork
             )
+
         }
     }
 }
@@ -83,8 +80,6 @@ fun ArtworkGridScreen(
     loading: Boolean, // It's okay to keep this for now
     onArtworkClick: (MuseumObject) -> Unit,
     onShare: (MuseumObject) -> Unit,
-    onStealSettings: () -> Unit,
-    onHijackSettings: () -> Unit
 ) {
     Log.d("ArtworkGridScreen", "Recomposing with loading=$loading and artworks.size=${artworks.size}")
 
@@ -122,19 +117,6 @@ fun ArtworkGridScreen(
         }
     } else {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(
-                onClick = { onStealSettings() }, // calling the steal button function.
-                modifier = Modifier.padding(16.dp)
-            ) {
-                Text("Launch File Read Attack")
-            }
-            Button(
-                onClick = { onHijackSettings() },
-                modifier = Modifier.padding(bottom = 16.dp, start = 16.dp, end = 16.dp)
-            ) {
-                Text("Launch Settings Hijack Attack")
-            }
-
             // Once we have artworks, show the grid
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(180.dp),

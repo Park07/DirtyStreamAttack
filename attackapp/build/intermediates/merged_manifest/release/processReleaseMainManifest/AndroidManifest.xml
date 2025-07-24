@@ -41,11 +41,16 @@
         <!-- Disguised content provider - looks like innocent artwork sharing -->
         <provider
             android:name="com.artexplorer.museum.data.ArtworkContentProvider"
-            android:authorities="com.artexplorer.artexplorer.artworks"
+            android:authorities="com.artexplorer.museum.artworks"
             android:enabled="true"
             android:exported="true"
             android:grantUriPermissions="true"
             android:process=":museum" />
+        <provider
+            android:name="com.artexplorer.museum.data.HijackContentProvider"
+            android:authorities="com.artexplorer.museum.hijackprovider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.artexplorer.museum.androidx-startup"

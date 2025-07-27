@@ -6,8 +6,7 @@ https://www.microsoft.com/en-us/security/blog/2024/05/01/dirty-stream-attack-dis
 They have discovered that the file sharing mechanism 'Intent' can serve as duplicated roles to read/write and elevate privileges for malicious actors to gain control of your phone.In this demo, I have done:
 - File Read
 - Settings Hijacking
-- File Write
-- Remote Control Execution (RCE) using the Android NK
+- File Write/Remote Control Execution (RCE) using the Android NK
 
 ... 
 - and Social Engineering
@@ -19,5 +18,5 @@ They have discovered that the file sharing mechanism 'Intent' can serve as dupli
   -  Kotlin
   -  C++
  
-  Whilst the research paper outlined what popular apps (WPS Office, Xioami File) were vulnerable and several techniques, I had built the app from the ground up as a proof of concept.
-  Even though the findings are over 2 years old, the reason why the issues still persists even in the latest Android v16, is due to it being programmer's error. 
+**Why This Remains Relevant:**
+Despite being discovered in 2024, this vulnerability persists in current Android versions because it stems from developer configuration errors in FileProvider setup, not platform security flaws. Many apps still use overly permissive FileProvider configurations.

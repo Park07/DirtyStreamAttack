@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.6.1" type="incidents">
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.16.0">
+        <fix-replace
+            description="Change to 1.16.0"
+            family="Update versions"
+            oldString="1.12.0"
+            replacement="1.16.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="15"
+            column="77"
+            startOffset="312"
+            endLine="15"
+            endColumn="85"
+            endOffset="320"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.9.2">
+        <fix-replace
+            description="Change to 2.9.2"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.9.2"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="6"
+            column="13"
+            startOffset="109"
+            endLine="6"
+            endColumn="20"
+            endOffset="116"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.10.1">
+        <fix-replace
+            description="Change to 1.10.1"
+            family="Update versions"
+            oldString="1.8.2"
+            replacement="1.10.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="5"
+            column="20"
+            startOffset="89"
+            endLine="5"
+            endColumn="27"
+            endOffset="96"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.1">
+        <fix-replace
+            description="Change to 1.7.1"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.7.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="18"
+            column="84"
+            startOffset="652"
+            endLine="18"
+            endColumn="91"
+            endOffset="659"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.1">
+        <fix-replace
+            description="Change to 2.2.1"
+            family="Update versions"
+            oldString="2.1.4"
+            replacement="2.2.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="19"
+            column="105"
+            startOffset="766"
+            endLine="19"
+            endColumn="112"
+            endOffset="773"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.compose:compose-bom than 2024.02.00 is available: 2025.07.00">
+        <fix-replace
+            description="Change to 2025.07.00"
+            family="Update versions"
+            oldString="2024.02.00"
+            replacement="2025.07.00"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="4"
+            column="15"
+            startOffset="57"
+            endLine="4"
+            endColumn="27"
+            endOffset="69"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.7.0 is available: 2.9.2">
+        <fix-replace
+            description="Change to 2.9.2"
+            family="Update versions"
+            oldString="2.7.0"
+            replacement="2.9.2"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="6"
+            column="13"
+            startOffset="109"
+            endLine="6"
+            endColumn="20"
+            endOffset="116"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.navigation:navigation-compose than 2.7.6 is available: 2.9.2">
+        <fix-replace
+            description="Change to 2.9.2"
+            family="Update versions"
+            oldString="2.7.6"
+            replacement="2.9.2"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="7"
+            column="14"
+            startOffset="130"
+            endLine="7"
+            endColumn="21"
+            endOffset="137"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-serialization-json than 1.6.2 is available: 1.7.3">
+        <fix-replace
+            description="Change to 1.7.3"
+            family="Update versions"
+            oldString="1.6.2"
+            replacement="1.7.3"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="9"
+            column="17"
+            startOffset="169"
+            endLine="9"
+            endColumn="24"
+            endOffset="176"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlinx:kotlinx-coroutines-android than 1.7.3 is available: 1.9.0">
+        <fix-replace
+            description="Change to 1.9.0"
+            family="Update versions"
+            oldString="1.7.3"
+            replacement="1.9.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="11"
+            column="14"
+            startOffset="205"
+            endLine="11"
+            endColumn="21"
+            endOffset="212"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.12.0"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="53"
+            column="82"
+            startOffset="2683"
+            endLine="53"
+            endColumn="90"
+            endOffset="2691"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1">
+        <fix-replace
+            description="Change to 1.2.1"
+            family="Update versions"
+            oldString="1.1.5"
+            replacement="1.2.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="57"
+            column="75"
+            startOffset="2843"
+            endLine="57"
+            endColumn="82"
+            endOffset="2850"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1">
+        <fix-replace
+            description="Change to 3.6.1"
+            family="Update versions"
+            oldString="3.5.1"
+            replacement="3.6.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="58"
+            column="96"
+            startOffset="2948"
+            endLine="58"
+            endColumn="103"
+            endOffset="2955"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.6.1 is available: 8.11.1">
+        <fix-replace
+            description="Change to 8.11.1"
+            family="Update versions"
+            oldString="8.6.1"
+            replacement="8.11.1"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="14"
+            endOffset="24"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.android than 2.0.20 is available: 2.0.21">
+        <fix-replace
+            description="Change to 2.0.21"
+            family="Update versions"
+            oldString="2.0.20"
+            replacement="2.0.21"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="3"
+            column="10"
+            startOffset="34"
+            endLine="3"
+            endColumn="18"
+            endOffset="42"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of org.jetbrains.kotlin.plugin.compose than 2.0.20 is available: 2.0.21">
+        <fix-replace
+            description="Change to 2.0.21"
+            family="Update versions"
+            oldString="2.0.20"
+            replacement="2.0.21"
+            priority="0"/>
+        <location
+            file="$HOME/AndroidStudioProjects/DirtyStream/gradle/libs.versions.toml"
+            line="3"
+            column="10"
+            startOffset="34"
+            endLine="3"
+            endColumn="18"
+            endOffset="42"/>
+    </incident>
+
+</incidents>

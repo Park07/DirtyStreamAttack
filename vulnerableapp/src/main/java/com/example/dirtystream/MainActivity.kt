@@ -48,6 +48,12 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        try {
+            Log.d("DirtyStream", "Attempting to load native library 'libdummy_library.so'")
+            System.loadLibrary("dummy_library")
+        } catch (e: UnsatisfiedLinkError) {
+            Log.e("DirtyStream", "Could not load dummy_library, this is expected before the attack.")
+        }
         // logging
         Log.d("DirtyStream", "Initialising default settings file.");
         val sharedPref = getSharedPreferences("com.example.dirtystream_preferences", MODE_PRIVATE)

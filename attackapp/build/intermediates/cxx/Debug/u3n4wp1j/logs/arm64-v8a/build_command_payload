@@ -1,0 +1,4 @@
+/Users/williampark/Library/Android/sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/.cxx/Debug/u3n4wp1j/arm64-v8a \
+  payload

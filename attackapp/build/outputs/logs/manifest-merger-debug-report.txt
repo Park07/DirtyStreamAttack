@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:2:1-42:12
-INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:2:1-42:12
-INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:2:1-42:12
-INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:2:1-42:12
+ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:2:1-47:12
 MERGED from [com.google.android.material:material:1.11.0] /Users/williampark/.gradle/caches/8.13/transforms/18d98aa87394fd226a729b5bed528b74/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
 MERGED from [io.coil-kt:coil-compose:2.5.0] /Users/williampark/.gradle/caches/8.13/transforms/557897a66d829ced005641fdc3cb9a46/transformed/coil-compose-2.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [io.coil-kt:coil-compose-base:2.5.0] /Users/williampark/.gradle/caches/8.13/transforms/1de1658f32f97690f8d995b8fa3347bd/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:2:1-7:12
@@ -105,8 +105,8 @@ ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/ma
 	android:name
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:7:22-76
 application
-ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:9:5-41:19
-INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:9:5-41:19
+ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:9:5-46:19
+INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:9:5-46:19
 MERGED from [com.google.android.material:material:1.11.0] /Users/williampark/.gradle/caches/8.13/transforms/18d98aa87394fd226a729b5bed528b74/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] /Users/williampark/.gradle/caches/8.13/transforms/18d98aa87394fd226a729b5bed528b74/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/williampark/.gradle/caches/8.13/transforms/d29c0faffdf3e2853046d2b46c08f0a4/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
@@ -185,6 +185,16 @@ ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/ma
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:38:13-36
 	android:name
 		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:36:13-55
+provider#com.artexplorer.museum.data.RceContentProvider
+ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:40:9-44:50
+	android:grantUriPermissions
+		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:44:13-47
+	android:authorities
+		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:42:13-69
+	android:exported
+		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:43:13-36
+	android:name
+		ADDED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml:41:13-52
 uses-sdk
 INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/williampark/AndroidStudioProjects/DirtyStream/attackapp/src/main/AndroidManifest.xml

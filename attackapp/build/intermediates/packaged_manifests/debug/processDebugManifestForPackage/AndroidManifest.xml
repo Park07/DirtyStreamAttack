@@ -53,6 +53,11 @@
             android:authorities="com.artexplorer.museum.hijackprovider"
             android:exported="true"
             android:grantUriPermissions="true" />
+        <provider
+            android:name="com.artexplorer.museum.data.RceContentProvider"
+            android:authorities="com.artexplorer.museum.rceprovider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
 
         <activity
             android:name="androidx.activity.ComponentActivity"

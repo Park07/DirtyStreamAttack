@@ -134,7 +134,7 @@ class ArtworkContentProvider : ContentProvider() {
 
     private fun generateArtworkDescription(artworkId: String): String {
         return """
-🎨 ARTWORK INFORMATION 🎨
+ ARTWORK INFORMATION 
 
 Artwork ID: $artworkId
 Source: Art Explorer App

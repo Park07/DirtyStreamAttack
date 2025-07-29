@@ -195,7 +195,7 @@ fun UnsuspectingScreen(
             )
 
             Text(
-                text = "Easily receive and organize shared files",
+                text = "Easily receive and organise shared files",
                 style = androidx.compose.material3.MaterialTheme.typography.bodyMedium,
                 color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
@@ -240,7 +240,7 @@ fun UnsuspectingScreen(
                     )
 
                     Text(
-                        text = "• Other apps can share files directly with FileShare Pro\n• Browse and select files manually\n• All content is safely organized in your app folder\n• Perfect for receiving photos, documents, and more!",
+                        text = "• Other apps can share files directly with FileShare Pro\n• Browse and select files manually\n• All content is safely organised in your app folder\n• Perfect for receiving photos, documents, and more!",
                         style = androidx.compose.material3.MaterialTheme.typography.bodySmall,
                         textAlign = TextAlign.Start,
                         color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant

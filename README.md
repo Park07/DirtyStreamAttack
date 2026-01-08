@@ -7,6 +7,7 @@ They have discovered that the file sharing mechanism 'Intent' can serve as dupli
 - File Read
 - Settings Hijacking
 - File Write/Remote Control Execution (RCE) using the Android NK
+(RCE is still very much WIP. The latest update (June 2025) RCE hasn't executed properly. If anyone can help so we can all learn that would be nice :D)
 
 ... 
 - and Social Engineering
@@ -17,6 +18,9 @@ They have discovered that the file sharing mechanism 'Intent' can serve as dupli
   Languages used:
   -  Kotlin
   -  C++
- 
+
+ NOTE:
+ - RCE is still very much WIP. The latest update (June 2025) RCE hasn't executed properly.
+
 **Why This Remains Relevant:**
 Despite being discovered in 2024, this vulnerability persists in current Android versions because it stems from developer configuration errors in FileProvider setup, not platform security flaws. Many apps still use overly permissive FileProvider configurations.

@@ -24,3 +24,5 @@ They have discovered that the file sharing mechanism 'Intent' can serve as dupli
 
 **Why This Remains Relevant:**
 Despite being discovered in 2024, this vulnerability persists in current Android versions because it stems from developer configuration errors in FileProvider setup, not platform security flaws. Many apps still use overly permissive FileProvider configurations.
+
+This was for COMP6841 'Something Awesome Project' got an HD :)
